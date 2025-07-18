@@ -1,0 +1,205 @@
+/* Cyberhacks Page Styles */
+.cyberhacks-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  color: #e0e0e0;
+}
+
+.cyberhacks-page__header {
+  text-align: center;
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: rgba(26, 26, 46, 0.7);
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  border: 1px solid #2a2a3a;
+}
+
+.cyberhacks-page h1 {
+  color: #00f0ff;
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+}
+
+.cyberhacks-page h2 {
+  color: #00f0ff;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+  border-bottom: 1px solid #2a2a3a;
+  padding-bottom: 0.5rem;
+}
+
+.cyberhacks-page p {
+  color: #a0a0c0;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* Layout */
+.cyberhacks-layout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 2rem;
+  min-height: 60vh;
+}
+
+/* Selection Menu */
+.cyberhacks-menu {
+  background: rgba(26, 26, 46, 0.7);
+  border: 1px solid #2a2a3a;
+  border-radius: 8px;
+  padding: 1.5rem;
+  height: fit-content;
+  position: relative;
+  min-height: 300px;
+}
+
+.selection-menu-container {
+  position: relative;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.loading-placeholder {
+  color: #8888bb;
+  font-style: italic;
+  padding: 2rem;
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.6; }
+  50% { opacity: 1; }
+  100% { opacity: 0.6; }
+}
+
+.cyberhacks-menu h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+
+.cyberhacks-selection-menu {
+  --selection-menu-bg: #1a1a2e;
+  --selection-menu-hover-bg: #2a2a3a;
+  --selection-menu-selected-bg: #00f0ff20;
+  --selection-menu-selected-border: #00f0ff;
+  --selection-menu-text: #e0e0e0;
+  --selection-menu-hover-text: #ffffff;
+  --selection-menu-selected-text: #00f0ff;
+  width: 100%;
+  margin-top: 1rem;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  visibility: hidden;
+  min-height: 200px;
+}
+
+.cyberhacks-selection-menu:defined {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Ensure the web component is properly sized */
+.cyberhacks-selection-menu::part(container) {
+  width: 100%;
+  height: 100%;
+}
+
+/* Style the items in the selection menu */
+.cyberhack-menu-item {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.cyberhack-menu-item:hover {
+  background-color: var(--selection-menu-hover-bg);
+  color: var(--selection-menu-hover-text);
+}
+
+.cyberhack-menu-item[selected] {
+  background-color: var(--selection-menu-selected-bg);
+  border-left-color: var(--selection-menu-selected-border);
+  color: var(--selection-menu-selected-text);
+}
+
+.cyberhack-menu-item {
+  padding: 0.8rem 1rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.cyberhack-menu-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Details Panel */
+.cyberhack-details {
+  background: rgba(26, 26, 46, 0.7);
+  border: 1px solid #2a2a3a;
+  border-radius: 8px;
+  padding: 2rem;
+}
+
+.cyberhack-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 1.5rem;
+  border-radius: 6px;
+  border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.stat-label {
+  color: #8888bb;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-value {
+  color: #e0e0e0;
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+
+/* Responsive Design */
+@media (max-width: 900px) {
+  .cyberhacks-layout {
+    grid-template-columns: 1fr;
+  }
+  
+  .cyberhacks-menu {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .cyberhacks-page {
+    padding: 1rem;
+  }
+  
+  .cyberhacks-page__header {
+    padding: 1.5rem;
+  }
+  
+  .cyberhack-stats {
+    grid-template-columns: 1fr;
+  }
+}
