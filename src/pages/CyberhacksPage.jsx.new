@@ -1,0 +1,221 @@
+import React, { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import cyberhacksData from '../data/cyberhacks';
+import IconLabel from '../components/atoms/icon-label/IconLabel';
+
+const CyberhacksPage = () => {
+  const [selectedCategory, setSelectedCategory] = useState('combat');
+  const [selectedHack, setSelectedHack] = useState(null);
+  
+  // Get cyberhacks from Redux store if available, otherwise use local data
+  const cyberhacks = useSelector(state => state.cyberhacks) || cyberhacksData;
+  
+  // Category metadata
+  const categories = [
+    { id: 'combat', label: 'Combat Hacks', icon: '⚔️' },
+    { id: 'control', label: 'Control Hacks', icon: '🎮' },
+    { id: 'covert', label: 'Covert Hacks', icon: '👤' },
+  ];
+  
+  // Set the first hack as selected by default
+  useEffect(() => {
+    if (cyberhacks[selectedCategory]?.length > 0 && !selectedHack) {
+      setSelectedHack(cyberhacks[selectedCategory][0]);
+    }
+  }, [cyberhacks, selectedCategory, selectedHack]);
+  
+  const handleHackSelect = (hack) => {
+    setSelectedHack(hack);
+  };
+  
+  const renderHackDetails = () => {
+    if (!selectedHack) return null;
+    
+    return (
+      <div className="hack-details">
+        <h2>{selectedHack.name}</h2>
+        <div className="hack-stats">
+          <p><strong>RAM Cost:</strong> {selectedHack.ramCost}</p>
+          <p><strong>Upload Time:</strong> {selectedHack.uploadTime}s</p>
+          <p><strong>Cooldown:</strong> {selectedHack.cooldown}s</p>
+        </div>
+        <p className="hack-description">{selectedHack.description}</p>
+        <div className="hack-effects">
+          <h3>Effects:</h3>
+          <ul>
+            {selectedHack.effects.map((effect, index) => (
+              <li key={index}>{effect}</li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    );
+  };
+  
+  return (
+    <div className="cyberhacks-page">
+      <h1>Cyberhacks</h1>
+      
+      <div className="category-tabs">
+        {categories.map(category => (
+          <button
+            key={category.id}
+            className={`category-tab ${selectedCategory === category.id ? 'active' : ''}`}
+            onClick={() => setSelectedCategory(category.id)}
+          >
+            <span className="tab-icon">{category.icon}</span>
+            <span className="tab-label">{category.label}</span>
+          </button>
+        ))}
+      </div>
+      
+      <div className="hacks-container">
+        <div className="hacks-list">
+          {cyberhacks[selectedCategory]?.map((hack, index) => (
+            <div 
+              key={index}
+              className={`hack-item ${selectedHack?.name === hack.name ? 'selected' : ''}`}
+              onClick={() => handleHackSelect(hack)}
+            >
+              <div className="hack-icon">
+                <icon-label icon="💾" label={hack.name}></icon-label>
+              </div>
+              <div className="hack-info">
+                <h3>{hack.name}</h3>
+                <p className="hack-ram">RAM: {hack.ramCost.split('→')[0].trim()}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+        
+        <div className="hack-details-container">
+          {renderHackDetails()}
+        </div>
+      </div>
+      
+      <style jsx>{`
+        .cyberhacks-page {
+          padding: 20px;
+          max-width: 1200px;
+          margin: 0 auto;
+          color: #fff;
+          font-family: 'Courier New', monospace;
+        }
+        
+        h1 {
+          color: #00ff9f;
+          text-align: center;
+          margin-bottom: 30px;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+        }
+        
+        .category-tabs {
+          display: flex;
+          gap: 10px;
+          margin-bottom: 20px;
+          border-bottom: 1px solid #333;
+          padding-bottom: 10px;
+        }
+        
+        .category-tab {
+          background: #1a1a1a;
+          border: 1px solid #333;
+          color: #fff;
+          padding: 10px 20px;
+          cursor: pointer;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          transition: all 0.3s ease;
+        }
+        
+        .category-tab:hover, .category-tab.active {
+          background: #00ff9f;
+          color: #000;
+          border-color: #00ff9f;
+        }
+        
+        .hacks-container {
+          display: flex;
+          gap: 20px;
+        }
+        
+        .hacks-list {
+          flex: 1;
+          max-width: 300px;
+          background: #0a0a0a;
+          border: 1px solid #333;
+          border-radius: 5px;
+          overflow-y: auto;
+          max-height: 70vh;
+        }
+        
+        .hack-item {
+          padding: 15px;
+          border-bottom: 1px solid #333;
+          cursor: pointer;
+          transition: all 0.2s ease;
+        }
+        
+        .hack-item:hover, .hack-item.selected {
+          background: #1a1a1a;
+          border-left: 3px solid #00ff9f;
+        }
+        
+        .hack-item h3 {
+          margin: 5px 0;
+          color: #00ff9f;
+        }
+        
+        .hack-ram {
+          color: #888;
+          font-size: 0.9em;
+          margin: 5px 0 0;
+        }
+        
+        .hack-details-container {
+          flex: 2;
+          background: #0a0a0a;
+          border: 1px solid #333;
+          border-radius: 5px;
+          padding: 20px;
+        }
+        
+        .hack-details h2 {
+          color: #00ff9f;
+          margin-top: 0;
+        }
+        
+        .hack-stats {
+          display: flex;
+          gap: 20px;
+          margin: 15px 0;
+          color: #ccc;
+        }
+        
+        .hack-description {
+          font-size: 1.1em;
+          line-height: 1.5;
+          margin-bottom: 20px;
+        }
+        
+        .hack-effects h3 {
+          color: #00ff9f;
+          margin-bottom: 10px;
+        }
+        
+        .hack-effects ul {
+          padding-left: 20px;
+        }
+        
+        .hack-effects li {
+          margin-bottom: 8px;
+          line-height: 1.4;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default CyberhacksPage;

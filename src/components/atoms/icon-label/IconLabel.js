@@ -88,11 +88,15 @@ export class IconLabel extends HTMLElement {
       .icon-label {
         display: inline-flex;
         align-items: center;
-        gap: 8px;
+        gap: 0;
+        word-wrap: wrap;
       }
       
-      .icon-label.reverse {
-        flex-direction: row-reverse;
+      .icon-label span {
+          text-align: center;
+          word-wrap: break-word;
+          width: 90%;
+          margin: 0 auto;
       }
       
       .icon {
