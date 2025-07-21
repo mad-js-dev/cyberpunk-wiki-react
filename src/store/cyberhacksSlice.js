@@ -1,9 +1,37 @@
 import { createSlice, createSelector } from '@reduxjs/toolkit';
 import cyberhacksData from '../data/cyberhacks';
 
+// Filter the data to only include Combat, Control, Covert, and Ultimate hacks
+const filteredCyberhacks = {
+  combat: cyberhacksData.combat || [],
+  control: cyberhacksData.control || [],
+  covert: cyberhacksData.covert || [],
+  ultimate: cyberhacksData.ultimate || []
+};
+
+const filteredHackutils = {
+  device: cyberhacksData.device || [],
+  vehicle: cyberhacksData.vehicle || [],
+};
+
+// Categories metadata
+const categories = [
+  { id: 'combat', label: 'Combat Hacks' },
+  { id: 'control', label: 'Control Hacks' },
+  { id: 'covert', label: 'Covert Hacks' },
+  { id: 'ultimate', label: 'Ultimate Hacks' },
+];
+
+// Categories metadata
+const utils = [
+  { id: 'device', label: 'Device Hacks' },
+  { id: 'vehicle', label: 'Vehicle Hacks' },
+];
+
 // Define the initial state
 const initialState = {
-  cyberhacks: cyberhacksData,
+  cyberhacks: filteredCyberhacks,
+  hackutils: filteredHackutils,
   status: 'idle',
   selectedId: null,
   selectedCategory: 'combat' // Default to combat quickhacks
@@ -28,6 +56,10 @@ export const { setSelectedId, setSelectedCategory } = cyberhacksSlice.actions;
 
 // Selectors
 export const selectAllCyberhacks = (state) => state.cyberhacks.cyberhacks || {};
+export const selectAllHackUtils = (state) => {
+  const { device = [], vehicle = [] } = state.cyberhacks.hackutils || {};
+  return [...device, ...vehicle];
+};
 export const selectSelectedId = (state) => state.cyberhacks.selectedId;
 export const selectSelectedCategory = (state) => state.cyberhacks.selectedCategory;
 
@@ -47,13 +79,24 @@ export const getSelectedCyberhack = createSelector(
   }
 );
 
-export const selectCyberhackCategories = createSelector(
+// Selector for categories with their metadata
+export const selectCategories = createSelector(
   [selectAllCyberhacks],
   (cyberhacks) => {
-    return Object.keys(cyberhacks).map(category => ({
-      id: category,
-      name: category.charAt(0).toUpperCase() + category.slice(1) + ' Quickhacks',
-      count: cyberhacks[category]?.length || 0
+    return categories.map(category => ({
+      ...category,
+      count: cyberhacks[category.id]?.length || 0
+    }));
+  }
+);
+
+// Selector for categories with their metadata
+export const selectUtilsCategories = createSelector(
+  [selectAllCyberhacks],
+  (cyberhacks) => {
+    return utils.map(util => ({
+      ...util,
+      count: cyberhacks[util.id]?.length || 0
     }));
   }
 );

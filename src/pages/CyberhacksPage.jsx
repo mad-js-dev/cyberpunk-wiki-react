@@ -4,6 +4,8 @@ import {
   selectAllCyberhacks, 
   selectSelectedCategory, 
   getSelectedCyberhack,
+  selectCategories,
+  selectAllHackUtils,
   setSelectedId,
   setSelectedCategory as setSelectedCategoryAction
 } from '../store/cyberhacksSlice';
@@ -15,22 +17,17 @@ const CyberhacksPage = () => {
   
   // Get cyberhacks data from Redux store using selectors
   const cyberhacks = useSelector(selectAllCyberhacks);
+  const hackutils = useSelector(selectAllHackUtils);
   const selectedCategory = useSelector(selectSelectedCategory);
+
   const selectedHackFromStore = useSelector(getSelectedCyberhack);
   
   const handleCategorySelect = (category) => {
     dispatch(setSelectedCategoryAction(category));
   };
   
-  // Category metadata
-  const categories = [
-    { id: 'combat', label: 'Combat Hacks', icon: '⚔️' },
-    { id: 'control', label: 'Control Hacks', icon: '🎮' },
-    { id: 'covert', label: 'Covert Hacks', icon: '🕵️' },
-    { id: 'device', label: 'Device Hacks', icon: '💻' },
-    { id: 'vehicle', label: 'Vehicle Hacks', icon: '🚗' },
-    { id: 'ultimate', label: 'Ultimate Hacks', icon: '💥' },
-  ];
+  // Get categories from Redux store
+  const categories = useSelector(selectCategories);
   
   // Set the first hack as selected by default if none is selected
   useEffect(() => {
@@ -47,25 +44,64 @@ const CyberhacksPage = () => {
   };
   
   const renderHackDetails = () => {
-    if (!selectedHack) return null;
+    if (!selectedHack) return (
+      <div className="hack-details--empty">
+        <p>Select a hack to view details</p>
+      </div>
+    );
     
     return (
       <div className="hack-details">
-        <h2>{selectedHack.name}</h2>
-        <div className="hack-stats">
-          <p><strong>RAM Cost:</strong> {selectedHack.ramCost}</p>
-          <p><strong>Upload Time:</strong> {selectedHack.uploadTime}s</p>
-          <p><strong>Cooldown:</strong> {selectedHack.cooldown}s</p>
+        <div className="hack-details__header">
+          <div className="hack-details__icon">
+            <img src={selectedHack.icon} alt={selectedHack.name} />
+          </div>
+          <div className="hack-details__title">
+            <h2>{selectedHack.name}</h2>
+            <span className="hack-details__type">{selectedHack.type || 'Quickhack'}</span>
+          </div>
         </div>
-        <p className="hack-description">{selectedHack.description}</p>
-        <div className="hack-effects">
-          <h3>Effects:</h3>
-          <ul>
-            {selectedHack.effects.map((effect, index) => (
-              <li key={index}>{effect}</li>
-            ))}
-          </ul>
+        
+        <div className="hack-details__stats">
+          <div className="stat-item">
+            <span className="stat-label">RAM Cost</span>
+            <span className="stat-value">{selectedHack.ramCost}</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-label">Upload Time</span>
+            <span className="stat-value">{selectedHack.uploadTime}s</span>
+          </div>
+          <div className="stat-item">
+            <span className="stat-label">Cooldown</span>
+            <span className="stat-value">{selectedHack.cooldown}s</span>
+          </div>
         </div>
+        
+        <div className="hack-details__section">
+          <h3>Description</h3>
+          <p className="hack-details__description">{selectedHack.description}</p>
+        </div>
+        
+        {selectedHack.effects && selectedHack.effects.length > 0 && (
+          <div className="hack-details__section">
+            <h3>Effects</h3>
+            <ul className="hack-effects">
+              {selectedHack.effects.map((effect, index) => (
+                <li key={index} className="hack-effect">
+                  <span className="effect-bullet">•</span>
+                  <span>{effect}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
+        
+        {selectedHack.notes && (
+          <div className="hack-details__section">
+            <h3>Notes</h3>
+            <p className="hack-notes">{selectedHack.notes}</p>
+          </div>
+        )}
       </div>
     );
   };
@@ -73,47 +109,77 @@ const CyberhacksPage = () => {
   return (
     <div className="cyberhacks-page">
       <h1 className="cyberhacks-page__title">Cyberhacks</h1>
-      
-      <div className="cyberhacks-page__categories">
-        {categories.map(category => (
-          <div key={category.id} className="cyberhacks-page__category">
-            <h2 className="cyberhacks-page__category-title">
-              {category.label}
-            </h2>
-            <div className="cyberhacks-page__category-hacks">
-              {cyberhacks[category.id]?.map((hack, index) => (
-                <div 
-                  key={index} 
-                  className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
-                  onClick={() => handleHackSelect(hack)}
-                >
-                  <icon-label icon={hack.icon} label={hack.name} />
+      <div className="cyberhacks-page__hackSelector">
+        <ul className="cyberhacks-page__categories">
+          {categories.map(category => (
+            <div key={category.id} className="cyberhacks-page__category">
+              <li is="collapsible-item" label={category.label} hide-icon="true" class="cyberhacks-page__categoryCollapsible">
+              
+                <div className="cyberhacks-page__category-hacks">
+                  {cyberhacks[category.id]?.map((hack, index) => (
+                    <div 
+                      key={index} 
+                      className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
+                      onClick={() => handleHackSelect(hack)}
+                    >
+                      <icon-label icon={hack.icon} label={hack.name} />
+                    </div>
+                  ))}
                 </div>
-              ))}
+              </li>
             </div>
-          </div>
-        ))}
+          ))}
+        </ul>
+        <div className="cyberhacks-page__category-hacks">
+          {hackutils.map((hack, index) => (
+            <div 
+              key={index} 
+              className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
+              onClick={() => handleHackSelect(hack)}
+            >
+              <icon-label icon={hack.icon} label={hack.name} />
+            </div>
+          ))}
+        </div>
       </div>
+      <div className="cyberhacks-page__hackDetails">
+        {renderHackDetails()}
+      </div>    
       
+
       <style>{`
         .cyberhacks-page {
-          padding: 20px;
           max-width: 1200px;
           margin: 0 auto;
           color: #fff;
           font-family: 'Courier New', monospace;
         }
 
-        .cyberhacks-page .icon-label {
+        .cyberhacks-page__hackSelector {
+          padding: 1rem;
+          background: rgba(0, 0, 0, 0.7);
+        }
+
+        .cyberhacks-page__categoryCollapsible .collapsible-item__header span{
+          word-break: break-all;
+          writing-mode: sideways-lr;
+        }
+
+        .cyberhacks-page__categoryCollapsible.collapsible-item  {
+          display: flex;
+          flex-direction: row;
+        }
+
+        .cyberhacks-page__hack-item .icon-label {
           flex-direction: column;
         }
 
-        .cyberhacks-page .icon-label span {
+        .cyberhacks-page__hack-item .icon-label span {
           height: 2.2rem;
           font-size: 12px;
         }
 
-        .cyberhacks-page .icon-label img {
+        .cyberhacks-page__hack-item .icon-label img {
           max-height: 120px;
           width: auto;
         }
@@ -128,11 +194,10 @@ const CyberhacksPage = () => {
         
         .cyberhacks-page__categories {
           display: flex;
-          flex-flow: row wrap;
           gap: 10px;
           margin: 2rem 0;
           overflow-x: auto;
-          padding-bottom: 1rem;
+          padding-left: 0;
         }
         
         .cyberhacks-page__category {
@@ -140,7 +205,137 @@ const CyberhacksPage = () => {
           border-radius: 8px;
           padding: 1rem;
           border: 1px solid #ff2a6d;
-          width: 46%;
+          width: 100%;
+        }
+
+        /* Hack Details Styles */
+        .cyberhacks-page__hackDetails {
+          background: rgba(20, 20, 30, 0.9);
+          border-radius: 8px;
+          margin: 1rem;
+          padding: 1.5rem;
+          color: #e0e0e0;
+          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+        }
+
+        .hack-details--empty {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          min-height: 200px;
+          color: #646cff;
+          font-style: italic;
+          font-size: 1.2rem;
+        }
+
+        .hack-details__header {
+          display: flex;
+          align-items: center;
+          margin-bottom: 1.5rem;
+          padding-bottom: 1rem;
+          border-bottom: 1px solid #333;
+        }
+
+        .hack-details__icon img {
+          width: 64px;
+          height: 64px;
+          object-fit: contain;
+          margin-right: 1.5rem;
+        }
+
+        .hack-details__title h2 {
+          margin: 0 0 0.25rem 0;
+          color: #fff;
+          font-size: 1.75rem;
+        }
+
+        .hack-details__type {
+          color: #646cff;
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .hack-details__stats {
+          display: grid;
+          grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+          gap: 1.5rem;
+          margin-bottom: 2rem;
+          background: rgba(0, 0, 0, 0.3);
+          padding: 1.25rem;
+          border-radius: 6px;
+        }
+
+        .stat-item {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        .stat-label {
+          color: #888;
+          font-size: 0.85rem;
+          margin-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+        }
+
+        .stat-value {
+          color: #fff;
+          font-weight: bold;
+          font-size: 1.25rem;
+          font-family: 'Courier New', monospace;
+        }
+
+        .hack-details__section {
+          margin-bottom: 2rem;
+        }
+
+        .hack-details__section h3 {
+          color: #00ff9f;
+          margin: 0 0 1rem 0;
+          font-size: 1.2rem;
+          border-bottom: 1px solid #333;
+          padding-bottom: 0.5rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+
+        .hack-details__description {
+          line-height: 1.7;
+          margin: 0;
+          color: #e0e0e0;
+        }
+
+        .hack-effects {
+          list-style: none;
+          padding: 0;
+          margin: 0;
+        }
+
+        .hack-effect {
+          display: flex;
+          align-items: flex-start;
+          margin-bottom: 0.75rem;
+          line-height: 1.6;
+        }
+
+        .effect-bullet {
+          color: #00ff9f;
+          margin-right: 0.75rem;
+          font-weight: bold;
+          flex-shrink: 0;
+          margin-top: 0.2em;
+        }
+
+        .hack-notes {
+          font-style: italic;
+          color: #aaa;
+          margin: 0;
+          padding: 1rem;
+          background: rgba(0, 255, 159, 0.08);
+          border-radius: 4px;
+          border-left: 3px solid #00ff9f;
         }
         
      
@@ -165,6 +360,7 @@ const CyberhacksPage = () => {
           flex-wrap: wrap;
           gap: 10px;
           justify-content: center;
+          min-width: 600px;
         }
         
         .cyberhacks-page__hack-item {

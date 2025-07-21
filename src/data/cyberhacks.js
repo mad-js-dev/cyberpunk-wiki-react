@@ -298,7 +298,7 @@ const cyberhacks = {
       ]
     },
     {
-      name: 'Surveillance Camera Control',
+      name: 'Camera Control',
       icon: '/src/assets/hacks/Icon_Quickhack_TakeControl.webp',
       ramCost: '3',
       uploadTime: '1.0',

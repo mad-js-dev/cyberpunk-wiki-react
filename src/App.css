@@ -94,11 +94,9 @@
 }
 
 .collapsible-item {
-  border: 1px solid #646cff;
   border-radius: 4px;
   overflow: hidden;
   margin-bottom: 0.5rem;
-  background: rgba(100, 108, 255, 0.1);
 }
 
 .collapsible-header {
@@ -123,7 +121,6 @@
 .collapsible-content {
   padding: 1rem;
   background: rgba(30, 30, 40, 0.8);
-  border-top: 1px solid #646cff;
 }
 
 .arrow {
