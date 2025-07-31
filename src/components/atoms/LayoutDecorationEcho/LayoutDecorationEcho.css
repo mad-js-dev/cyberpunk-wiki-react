@@ -1,0 +1,31 @@
+.layoutDecorationEcho {
+  font-size: 10px;
+  flex-direction: column;
+  gap: 0.5rem;
+  align-items: center;
+  font-family: monospace;
+  color: rgba(207, 0, 0, 0.6);
+  text-shadow: 0 0 10px rgba(207, 0, 0, 0.6);
+  font-weight: bold;
+}
+
+.repeating-element {
+  color: rgba(207, 0, 0, 0.6);
+  text-shadow: 0 0 10px rgba(207, 0, 0, 0.6);
+  animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+  0% { opacity: 0.5; }
+  50% { opacity: 1; }
+  100% { opacity: 0.5; }
+}
+
+@keyframes bgAnimation { 
+  0% { 
+    background-position: 0% 0%;
+  }
+  100% { 
+    background-position: 0% 100%;
+  }
+}

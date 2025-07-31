@@ -1,128 +1,78 @@
-import { createSlice, createSelector } from '@reduxjs/toolkit';
+import { createSelector } from '@reduxjs/toolkit';
+import { createEntitySlice } from './sliceFactory';
 import vehiclesData from '../data/vehicles';
 
-// Define the initial state
-const initialState = {
-  vehicles: vehiclesData,
-  status: 'idle',
-  selectedId: null
-};
-
-// Create the slice
-export const vehiclesSlice = createSlice({
-  name: 'vehicles',
-  initialState,
-  reducers: {
-    setSelectedId: (state, action) => {
-      console.group('Redux: setSelectedId');
-      console.log('Current selectedId:', state.selectedId);
-      console.log('New selectedId:', action.payload);
-      
-      // Always update to ensure consistency with the action
-      state.selectedId = action.payload;
-      console.log('Updated selectedId in state');
-      
-      console.log('New state:', {
-        ...state,
-        // Don't log the entire vehicles array
-        vehicles: state.vehicles ? `[${state.vehicles.length} vehicles]` : 'none'
-      });
-      console.groupEnd();
-    }
-  }
-});
-
-// Export actions
-export const { setSelectedId } = vehiclesSlice.actions;
-
-// Selectors
-export const selectAllVehicles = (state) => state.vehicles.vehicles || [];
-export const selectSelectedId = (state) => state.vehicles.selectedId;
-
-export const getSelectedVehicle = createSelector(
-  [selectAllVehicles, selectSelectedId],
-  (vehicles, selectedId) => {
-    console.group('getSelectedVehicle Selector');
-    console.log('Input vehicles count:', vehicles.length);
-    console.log('Selected ID:', selectedId);
+// Custom formatter for vehicle data to create a hierarchical structure
+const formatVehicleData = (vehicles) => {
+  if (!vehicles || !vehicles.length) return [];
+  
+  // Group vehicles by manufacturer and model
+  const vehiclesByManufacturer = vehicles.reduce((brands, vehicle) => {
+    if (!vehicle.manufacturer || !vehicle.model) return brands;
     
-    if (!selectedId) {
-      console.log('No selected ID, returning null');
-      console.groupEnd();
-      return null;
+    if (!brands[vehicle.manufacturer]) {
+      brands[vehicle.manufacturer] = {};
     }
     
-    // Find the vehicle with the matching ID
-    const foundVehicle = vehicles.find(vehicle => {
-      const match = vehicle.id === selectedId;
-      console.log(`Checking vehicle ${vehicle.id} (${vehicle.manufacturer} ${vehicle.model}): ${match ? 'MATCH' : 'no match'}`);
-      return match;
+    if (!brands[vehicle.manufacturer][vehicle.model]) {
+      brands[vehicle.manufacturer][vehicle.model] = [];
+    }
+    
+    brands[vehicle.manufacturer][vehicle.model].push({
+      id: vehicle.id,
+      name: vehicle.series || 'Standard',
+      ...vehicle
     });
     
-    if (!foundVehicle) {
-      console.error(`No vehicle found with ID: ${selectedId}`);
-      console.log('Available vehicle IDs:', vehicles.map(v => ({
-        id: v.id,
-        name: `${v.manufacturer || ''} ${v.model || ''} ${v.series || ''}`.trim()
-      })));
-    } else {
-      console.log('Found vehicle:', {
-        id: foundVehicle.id,
-        name: `${foundVehicle.manufacturer || ''} ${foundVehicle.model || ''} ${foundVehicle.series || ''}`.trim(),
-        hasImages: !!(foundVehicle.images && foundVehicle.images.length)
-      });
-    }
-    
-    console.groupEnd();
-    return foundVehicle || null;
-  }
-);
+    return brands;
+  }, {});
+  
+  // Convert to the format expected by SelectionMenu
+  return Object.entries(vehiclesByManufacturer).map(([manufacturer, models]) => ({
+    id: `manufacturer_${manufacturer.toLowerCase().replace(/\s+/g, '_')}`,
+    label: manufacturer,
+    type: 'manufacturer',
+    children: Object.entries(models).map(([model, series]) => ({
+      id: `model_${model.toLowerCase().replace(/\s+/g, '_')}`,
+      label: model,
+      type: 'model',
+      children: series.map(vehicle => ({
+        id: vehicle.id,
+        label: vehicle.series || 'Standard',
+        ...vehicle
+      }))
+    }))
+  }));
+};
 
-// Selector to get vehicle categories in a structure for SelectionMenu (Brand -> Model -> Series)
+// Create the slice with custom data formatter
+const {
+  actions: vehiclesActions,
+  reducer: vehiclesReducer,
+  selectors: vehiclesSelectors
+} = createEntitySlice({
+  name: 'vehicles',
+  initialData: vehiclesData,
+  // No grouping as we're handling the structure in the formatter
+});
+
+// Export the reducer as default
+export default vehiclesReducer;
+
+// Export actions
+export const { setSelectedId } = vehiclesActions;
+
+// Export all selectors with semantic names
+export const {
+  selectAllData: selectAllVehicles,
+  selectSelectedId: selectSelectedVehicleId,
+  selectStatus: selectVehiclesStatus,
+  selectSelectedItem: getSelectedVehicle,
+  selectFlatData: selectVehiclesFlatList
+} = vehiclesSelectors;
+
+// Custom selector for the hierarchical vehicle data
 export const getVehicleCategories = createSelector(
   [selectAllVehicles],
-  (vehicles) => {
-    if (!vehicles || !vehicles.length) return [];
-    
-    // First, organize vehicles by manufacturer
-    const vehiclesByManufacturer = vehicles.reduce((brands, vehicle) => {
-      if (!vehicle.manufacturer) return brands;
-      
-      // Initialize manufacturer if it doesn't exist
-      if (!brands[vehicle.manufacturer]) {
-        brands[vehicle.manufacturer] = {};
-      }
-      
-      // Initialize model under manufacturer if it doesn't exist
-      if (!brands[vehicle.manufacturer][vehicle.model]) {
-        brands[vehicle.manufacturer][vehicle.model] = [];
-      }
-      
-      // Add vehicle to its model and series
-      brands[vehicle.manufacturer][vehicle.model].push({
-        id: vehicle.id,
-        name: vehicle.series || 'Standard',
-        data: vehicle // Include full vehicle data for reference
-      });
-      
-      return brands;
-    }, {});
-    
-    // Convert to array format expected by SelectionMenu
-    const result = Object.entries(vehiclesByManufacturer).map(([manufacturer, models]) => ({
-      label: manufacturer,
-      children: Object.entries(models).map(([model, series]) => ({
-        label: model,
-        children: series.map(item => ({
-          id: item.id,
-          label: item.name,
-          data: item.data 
-        }))
-      }))
-    }));
-    console.log(result);
-    return result;
-  }
+  (vehicles) => formatVehicleData(vehicles)
 );
-
-export default vehiclesSlice.reducer;

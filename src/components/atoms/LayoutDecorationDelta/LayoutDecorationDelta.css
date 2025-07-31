@@ -1,0 +1,8 @@
+.layoutDecorationDelta {
+  color: rgba(207, 0, 0, 0.6);
+  writing-mode: sideways-rl;
+}
+
+.layoutDecorationDelta span.active {
+   color: rgba(255, 0, 0, 0.733);
+}

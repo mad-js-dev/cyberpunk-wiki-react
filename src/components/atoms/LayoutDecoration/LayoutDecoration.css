@@ -1,0 +1,25 @@
+.layoutDecoration {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: rgb(0 0 0 / 20%);
+  background: linear-gradient(0deg, rgba(207, 0, 0, 0.4) 45%, rgb(255 0 0) 50%, rgba(207, 0, 0, 0.4) 55%);
+  background-clip: text;
+  background-size: 200% 200%;
+  white-space: nowrap;
+  writing-mode: sideways-lr;
+  position: fixed;
+  max-height: 50%;
+  animation: bgAnimation 3s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  pointer-events: none;
+}
+
+@keyframes bgAnimation { 
+  0% { 
+    background-position: 0% 0%;
+  }
+  100% { 
+    background-position: 0% 100%;
+  }
+}

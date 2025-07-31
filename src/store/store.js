@@ -1,11 +1,13 @@
 import { configureStore } from '@reduxjs/toolkit';
-import { vehiclesSlice } from './vehiclesSlice';
+import vehiclesReducer from './vehiclesSlice';
 import cyberhacksReducer from './cyberhacksSlice';
+import weaponsReducer from './weaponsSlice';
 
 export const store = configureStore({
   reducer: {
-    vehicles: vehiclesSlice.reducer,
+    vehicles: vehiclesReducer,
     cyberhacks: cyberhacksReducer,
+    weapons: weaponsReducer,
   },
   devTools: process.env.NODE_ENV !== 'production',
 });

@@ -1,3 +1,9 @@
+
+
+
+
+
+
 #root.App {
   max-width: 1280px;
   margin: 0 auto;
@@ -5,6 +11,12 @@
   text-align: center;
 }
 
+.app-container {
+}
+
+.app-header, .app-content {
+  margin: 0 50px;
+}
 .logo {
   height: 6em;
   padding: 1.5em;
@@ -55,12 +67,6 @@
 .nav-link:hover {
   background-color: #1a1a2e;
   color: #fff;
-}
-
-.app-container {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 2rem;
 }
 
 @keyframes logo-spin {
@@ -131,4 +137,122 @@
 
 .collapsible-header[aria-expanded="true"] .arrow {
   transform: rotate(90deg);
+}
+
+.deco1 {
+ left: 14px;
+ top: 0;
+}
+
+.deco2 {
+  left: 14px;
+  top: 50%;
+}
+
+.deco3 {
+  right: 16px;
+  top: 0;
+  writing-mode: sideways-rl;
+}
+
+.deco4 {
+  right: 16px;
+  top: 50%;
+  writing-mode: sideways-rl;
+}
+
+.deco5 {
+  top: 35vh;
+  left: 2px;
+}
+
+.deco6 {
+  animation: arrowsAnimation 3s ease infinite;
+  top: 16vh;
+  left: 3px;
+}
+
+.deco7 {
+  animation: arrowsAnimation2 1s ease infinite;
+  top: 9vh;
+  left: 3px;
+}
+
+.deco8 {
+  top: 6vh;
+  color: rgba(207, 0, 0, 0.6);
+  display: inline-block;
+  animation: elemSpin infinite 10s linear;
+}
+
+.deco9 {
+  position: fixed;
+  right: 1px;
+  top: 45%;
+}
+
+.deco9 span {
+  margin: 5px;
+}
+
+.deco10{
+  color: rgba(207, 0, 0, 0.4);
+  position: absolute;
+  top: 13vh;
+  left: 2px;
+  height: 24px;
+  width: 24px;
+  display: block;
+}
+
+.deco11 {
+  position: fixed;
+  top: 10vh;
+  right: 34px;
+}
+
+.deco12 {
+  right: 34px;
+  bottom: 3vh;
+}
+@keyframes arrowsAnimation { 
+  0% { 
+    transform: translateY(100%);
+    color: rgba(207, 0, 0, 0);
+  }
+  10% {
+    color: rgba(207, 0, 0, 0.4);
+  }
+  90% {
+    color: rgba(207, 0, 0, 0.4);
+  }
+  100% { 
+    color: rgba(207, 0, 0, 0);
+    transform: translateY(0%)
+  }
+}
+
+@keyframes arrowsAnimation2 { 
+  0% { 
+    color: rgba(207, 0, 0, 0);
+  }
+  10% {
+    color: rgba(207, 0, 0, 0.4);
+  }
+  90% {
+    color: rgba(207, 0, 0, 0.4);
+  }
+  100% { 
+    color: rgba(207, 0, 0, 0);
+  }
+}
+
+
+@keyframes elemSpin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }

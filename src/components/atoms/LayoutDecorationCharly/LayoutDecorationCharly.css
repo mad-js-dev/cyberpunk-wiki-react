@@ -1,0 +1,17 @@
+.layoutDecorationCharly {
+  font-size: 0.6rem;
+  font-weight: bold;
+  color: rgba(207, 0, 0, 0.4);
+  height: 15vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  display: flex;
+  flex-direction: column;
+  z-index: 1;
+}
+
+.string {
+  font-size: 0.6em;
+}

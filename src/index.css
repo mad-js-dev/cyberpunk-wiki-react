@@ -1,5 +1,7 @@
+@import './styles/fonts.css';
+
 :root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: var(--font-main), system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -28,6 +30,10 @@ body {
   place-items: center;
   min-width: 320px;
   min-height: 100vh;
+  font-family: var(--font-main);
+  font-weight: 400;
+  line-height: 1.5;
+  color: #fff;
 }
 
 h1 {
@@ -54,6 +60,8 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -65,4 +73,57 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+#root {
+  width: 100%; 
+  height: 100vh;
+  background-image: radial-gradient(farthest-corner at 50% -30%, rgba(255, 0, 0, 0.356) 0%, transparent 70%);
+  background-repeat: no-repeat;
+  background-color: black;
+  background-position: 0 -260px;
+}
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+}
+.app-header > div {
+  flex-basis: auto;
+}
+
+.app-header > div:first-child, .app-header > div:last-child {
+  border-bottom: 2px solid rgba(180, 0, 0, 0.678);
+  flex-basis: 100%;
+}
+
+nav {
+  height: 100%;
+  margin: 0 auto ;
+  display:  flex;
+}
+
+nav a {
+  font-size: 1.2rem;
+  display: inline-block;
+  border-bottom: 2px solid #00d0ff;
+  color: #00d0ff;
+  padding: 2.5rem 0.5rem 0.25rem 0.5rem;
+  margin: 0 5px;
+  text-transform: uppercase;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+  transition: border-bottom-width 0.2s ease;
+}
+nav a:hover, nav a.active {
+  border-bottom: 4px solid #00d0ffab;
+  color: #00d0ffab;
+  transition: border-bottom-width 0.2s ease;
+}
+
+nav a.active {
+  border-bottom-width: 6px;
+  border-bottom-color: rgba(173, 1, 1, 0.712);
+  color: rgba(173, 1, 1, 0.712);
+  text-shadow: 0 0 10px rgba(173, 1, 1, 0.712);
 }

@@ -1,0 +1,30 @@
+.layoutDecorationBeta {
+  font-size: 0.6rem;
+  font-weight: bold;
+  position: fixed;
+  max-height: 50%;
+  white-space: nowrap;
+  writing-mode: sideways-lr;
+  pointer-events: none;
+  color: rgba(207, 0, 0, 0.6);
+  text-transform: uppercase;
+}
+
+.layoutDecorationBeta span {
+  margin: 5px 0;
+}
+
+.random-string {
+  display: inline-block;
+  margin: 0 2px;
+}
+
+
+@keyframes bgAnimation { 
+  0% { 
+    background-position: 0% 0%;
+  }
+  100% { 
+    background-position: 0% 100%;
+  }
+}
