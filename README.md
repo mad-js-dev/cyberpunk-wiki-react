@@ -1,11 +1,75 @@
-# React + TypeScript + Vite
+# Cyberpunk Wiki - React
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A Cyberpunk 2077 themed wiki application built with React, TypeScript, and Vite.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Browse Cyberpunk 2077 vehicles, weapons, and cyberhacks
+- Responsive design with a cyberpunk aesthetic
+- Built with modern React and Redux Toolkit
+- Deployed using GitHub Pages
+
+## Getting Started
+
+### Prerequisites
+
+- Node.js (v16 or later)
+- npm (v7 or later) or yarn
+
+### Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/mad-js-dev/cyberpunk-wiki-react.git
+   cd cyberpunk-wiki-react
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   # or
+   yarn
+   ```
+
+3. Start the development server:
+   ```bash
+   npm run dev
+   # or
+   yarn dev
+   ```
+
+## Deployment
+
+This project is configured for deployment to GitHub Pages. To deploy:
+
+1. Make sure your changes are committed and pushed to the `main` branch
+2. Run the deployment script:
+   ```bash
+   npm run deploy
+   # or
+   yarn deploy
+   ```
+
+This will build the production version of the app and deploy it to the `gh-pages` branch, which will be served at:
+https://mad-js-dev.github.io/cyberpunk-wiki-react
+
+## Development
+
+### Building for Production
+
+```bash
+npm run build
+# or
+yarn build
+```
+
+### Linting
+
+```bash
+npm run lint
+# or
+yarn lint
+```
 
 ## Expanding the ESLint configuration
 
