@@ -7,8 +7,7 @@ export interface LayoutDecorationCharlyProps {
 }
 
 const LayoutDecorationCharly: React.FC<LayoutDecorationCharlyProps> = ({
-  text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam ultrices, lorem vitae mollis malesuada, tortor arcu vulputate sapien, in finibus metus purus sed lacus. Sed tincidunt convallis consequat. Ut vulputate tincidunt sagittis. Quisque ut vehicula nisi, sit amet tincidunt ante. Nullam ultricies efficitur elementum. Fusce eget accumsan massa, dignissim pharetra orci.",
-  className= ''
+  className = ''
 }) => {
   return (
     <div className={`layoutDecorationCharly ${className}`}>

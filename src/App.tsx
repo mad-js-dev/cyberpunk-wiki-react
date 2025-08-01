@@ -2,7 +2,6 @@ import { useState } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
 import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
-import ShardIcon from './assets/Shard_Icon_CP2077.webp';
 import CyberhacksPage from './pages/CyberhacksPage';
 import VehiclesPage from './pages/VehiclesPage';
 import WeaponsPage from './pages/WeaponsPage';
