@@ -1,0 +1,12 @@
+.arrow-icon {
+  transition: transform 0.3s ease;
+  fill: currentColor;
+}
+
+.arrow-icon.down {
+  transform: rotate(0deg);
+}
+
+.arrow-icon.up {
+  transform: rotate(180deg);
+}

@@ -84,9 +84,6 @@
   }
 }
 
-  padding: 2em;
-}
-
 .read-the-docs {
   color: #888;
 }
@@ -255,4 +252,11 @@
   100% {
     transform: rotate(360deg);
   }
+}
+.collapsible-item__header {
+  background-image: url('./assets/Frame4.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 80px;
 }

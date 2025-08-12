@@ -72,10 +72,64 @@ class CollapsibleItem extends HTMLLIElement {
   _createHeader() {
     const header = document.createElement("div");
     header.className = "collapsible-item__header";
+    header.style.position = "relative";
+    
     const contentWrapper = document.createElement("div");
     contentWrapper.style.display = "flex";
     contentWrapper.style.alignItems = "center";
     contentWrapper.style.flex = "1";
+    contentWrapper.style.position = "relative";
+    contentWrapper.style.zIndex = "1";
+    
+    // Add Frame4 as inline SVG
+    const svgWrapper = document.createElement("div");
+    svgWrapper.className = "collapsible-item__frame-icon";
+    svgWrapper.style.position = "absolute";
+    svgWrapper.style.top = "0";
+    svgWrapper.style.left = "0";
+    svgWrapper.style.width = "100%";
+    svgWrapper.style.height = "100%";
+    svgWrapper.style.overflow = "hidden";
+    svgWrapper.style.zIndex = "-1";
+    
+    const svgNS = "http://www.w3.org/2000/svg";
+    const svg = document.createElementNS(svgNS, "svg");
+    svg.setAttribute("width", "100%");
+    svg.setAttribute("height", "100%");
+    svg.setAttribute("preserveAspectRatio", "none");
+    svg.setAttribute("viewBox", "0 0 817 101");
+    svg.setAttribute("fill", "none");
+    
+    const path1 = document.createElementNS(svgNS, "path");
+    path1.setAttribute("d", "M807 78.5V18L116 17.5L108.5 10H98.5H25V91H794.5L807 78.5Z");
+    path1.setAttribute("fill", "#B30000");
+    path1.setAttribute("fill-opacity", "0.4");
+    
+    const g1 = document.createElementNS(svgNS, "g");
+    g1.setAttribute("id", "Path_2");
+    
+    const mask = document.createElementNS(svgNS, "mask");
+    mask.setAttribute("id", "path-2-inside-1_322_9");
+    mask.setAttribute("fill", "white");
+    
+    const maskPath = document.createElementNS(svgNS, "path");
+    maskPath.setAttribute("d", "M807 18V78.5L794.5 91H25H10V75H13V49H10V10H25H98.5H108.5L116 17.5L807 18Z");
+    
+    const path2 = document.createElementNS(svgNS, "path");
+    path2.setAttribute("d", "M25 91H26V10H25H24V91H25ZM807 18H809V16.0014L807.001 16L807 18ZM807 78.5L808.414 79.9142L809 79.3284V78.5H807ZM794.5 91V93H795.328L795.914 92.4142L794.5 91ZM116 17.5L114.586 18.9142L115.171 19.4994L115.999 19.5L116 17.5ZM108.5 10L109.914 8.58579L109.328 8H108.5V10ZM10 49H8V51H10V49ZM10 10V8H8V10H10ZM10 91H8V93H10V91ZM10 75V73H8V75H10ZM13 49H15V47H13V49ZM13 75V77H15V75H13ZM807 18H805V78.5H807H809V18H807ZM807 78.5L805.586 77.0858L793.086 89.5858L794.5 91L795.914 92.4142L808.414 79.9142L807 78.5ZM116 17.5L115.999 19.5L806.999 20L807 18L807.001 16L116.001 15.5L116 17.5ZM108.5 10L107.086 11.4142L114.586 18.9142L116 17.5L117.414 16.0858L109.914 8.58579L108.5 10ZM10 49H12V10H10H8V49H10ZM10 91H12V75H10H8V91H10ZM13 49V47H10V49V51H13V49ZM10 75V77H13V75V73H10V75ZM13 75H15V49H13H11V75H13ZM98.5 10V12H108.5V10V8H98.5V10ZM794.5 91V89H25V91V93H794.5V91ZM25 91V89H10V91V93H25V91ZM10 10V12H25V10V8H10V10ZM25 10V12H98.5V10V8H25V10Z");
+    path2.setAttribute("fill", "white");
+    path2.setAttribute("mask", "url(#path-2-inside-1_322_9)");
+    
+    mask.appendChild(maskPath);
+    g1.appendChild(mask);
+    g1.appendChild(path2);
+    
+    svg.appendChild(path1);
+    svg.appendChild(g1);
+    
+    svgWrapper.appendChild(svg);
+    contentWrapper.appendChild(svgWrapper);
+
     const hideIcon = this.hasAttribute("hide-icon");
     const icon = this.getAttribute("icon");
     if (icon && !hideIcon) {

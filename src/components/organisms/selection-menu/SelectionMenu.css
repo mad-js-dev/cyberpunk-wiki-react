@@ -1,0 +1,135 @@
+.selection-menu {
+  --primary-color: #4a6cf7;
+  --hover-bg: #f5f8ff;
+  --selected-bg: #e6f0ff;
+  --border-color: #e2e8f0;
+  --text-color: #2d3748;
+  --text-secondary: #4a5568;
+  height: 100%;
+  max-height: 80vh;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+  scrollbar-color: rgba(255,0 ,0 , 0.4) rgba(255,0 ,0, 0.4);
+  scrollbar-width: thin;
+  padding-right: 10px;
+  margin-right: 10px;
+}
+
+.selection-menu::-webkit-scrollbar-track {
+  background-color: pink;
+  border-radius: 2px;
+}
+
+.selection-menu::-webkit-scrollbar-thumb {
+  background-color: pink;
+  border-radius: 2px;
+}
+
+.menu-container {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.menu-item {
+  cursor: pointer;
+  margin: 2px 0;
+  border-radius: 4px;
+  list-style: none;
+  padding: 0;
+}
+
+.menu-item__content {
+  position : relative;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  transition: all 0.2s ease;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.menu-item__content > * {
+  position: relative;
+  z-index: 1;
+}
+
+.menu-item--selected .menu-item__content {
+  background-color: rgba(100, 108, 255, 0.3);
+  color: #fff;
+  font-weight: 500;
+  box-shadow: 0 0 15px rgba(100, 108, 255, 0.3);
+}
+
+.menu-item-bg {
+  position: absolute;
+}
+
+.menu-item__arrow {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 16px;
+  height: 16px;
+  margin-right: 8px;
+  --arrow-color: #ff3b30; /* Red color */
+  --arrow-fill: rgba(255, 59, 48, 0.2); /* Red with opacity */
+  margin-right: 1rem;
+  z-index: 1;
+}
+
+.menu-item__arrow .arrow-icon {
+  width: 100%;
+  height: 100%;
+  transition: transform 0.2s ease;
+}
+
+.menu-item__arrow .arrow-icon path {
+  fill: var(--arrow-fill);
+  stroke: var(--arrow-color);
+  stroke-width: 1px;
+}
+
+.menu-item__arrow .expanded {
+  transform: rotate(-90deg);
+}
+
+.menu-item-bg--active {
+  position:  absolute;
+  left: 0;
+}
+
+.menu-item__label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  margin-left: 1.2rem;
+  text-transform: uppercase;
+  font-size: 1.1em;
+  letter-spacing: 0.5px;
+  font-weight: 500;
+  padding: 15px 0;
+}
+
+.menu-item__child-list {
+  list-style: none;
+  padding-left: 24px;
+  margin: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, opacity 0.2s ease;
+}
+
+/* Animation for expanding/collapsing */
+.menu-item__child-list--collapsed {
+  max-height: 0;
+  opacity: 0;
+  padding: 0;
+}
+
+.menu-item__child-list--expanded {
+  max-height: 1000px; /* Adjust based on your needs */
+  opacity: 1;
+}

@@ -1,0 +1,16 @@
+.menu-item-bg {
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.menu-item-bg__path {
+  opacity: 0.8;
+  transition: all 0.3s ease;
+  color: var(--color-primary);
+}
+
+.menu-item:hover .menu-item-bg__path {
+  opacity: 1;
+  filter: drop-shadow(0 0 8px var(--color-accent));
+}
