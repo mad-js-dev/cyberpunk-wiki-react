@@ -1,4 +1,4 @@
-import React, { useRef, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { 
   getVehicleCategories, 
@@ -6,12 +6,33 @@ import {
   getSelectedVehicle 
 } from '../store/vehiclesSlice';
 import EntitySelectionLayout from '../components/views/EntitySelectionLayout';
-import VehicleLayout from '../components/templates/VehicleLayout';
+import ProductLayout from '../components/templates/product-layout/ProductLayout.jsx';
+
+// Add styles
+const styles = `  
+  .vehicle-specs strong {
+    color: #4a90e2;
+    margin-right: 8px;
+  }
+  
+  .vehicle-description {
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  
+  .no-vehicle-selected {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 300px;
+    color: #666;
+    font-style: italic;
+  }
+`;
 
 const VehiclesPage = () => {
   const dispatch = useDispatch();
   const selectedVehicle = useSelector(getSelectedVehicle);
-  const productLayoutRef = useRef(null);
   
   // Handle when a vehicle is selected
   const handleVehicleSelected = (vehicleId, vehicle) => {
@@ -19,31 +40,38 @@ const VehiclesPage = () => {
     // Additional vehicle-specific logic can go here
   };
 
-  // Update the product-layout web component when selectedVehicle changes
-  useEffect(() => {
-    const productLayout = productLayoutRef.current;
-    if (productLayout && productLayout.setAttribute) {
-      if (selectedVehicle) {
-        // Update the product-layout web component with the selected vehicle's data
-        productLayout.setAttribute('name', `${selectedVehicle.manufacturer} ${selectedVehicle.model}`);
-        
-        // Set the image if available
-        if (selectedVehicle.image) {
-          productLayout.setAttribute('image', selectedVehicle.image);
-        }
-        
-        // You can add more attributes as needed
-        if (selectedVehicle.description) {
-          productLayout.setAttribute('description', selectedVehicle.description);
-        }
-      } else {
-        // Reset attributes when no vehicle is selected
-        productLayout.removeAttribute('name');
-        productLayout.removeAttribute('image');
-        productLayout.removeAttribute('description');
-      }
+  // Prepare vehicle images for ProductLayout
+  const getVehicleImages = () => {
+    if (!selectedVehicle) return [];
+    
+    const images = [];
+    
+    // Add main image if available
+    if (selectedVehicle.image) {
+      images.push({
+        src: selectedVehicle.image,
+        title: `${selectedVehicle.manufacturer} ${selectedVehicle.model}`,
+        alt: `Image of ${selectedVehicle.manufacturer} ${selectedVehicle.model}`,
+        description: selectedVehicle.description || ''
+      });
     }
-  }, [selectedVehicle]);
+    
+    // Add additional images if available
+    if (selectedVehicle.images && Array.isArray(selectedVehicle.images)) {
+      selectedVehicle.images.forEach((img, index) => {
+        if (img && img.src) {
+          images.push({
+            src: img.src,
+            title: img.title || `${selectedVehicle.manufacturer} ${selectedVehicle.model} - View ${index + 1}`,
+            alt: img.alt || `Additional view ${index + 1} of ${selectedVehicle.manufacturer} ${selectedVehicle.model}`,
+            description: img.description || ''
+          });
+        }
+      });
+    }
+    
+    return images.length > 0 ? images : [];
+  };
 
   return (
     <div className="vehicles-page">
@@ -53,21 +81,32 @@ const VehiclesPage = () => {
         getSelectedItem={getSelectedVehicle}
         entityType="vehicles"
         onItemSelected={handleVehicleSelected}
-        renderDetails={(vehicle) => (
-          <div ref={productLayoutRef}>
-            <VehicleLayout vehicle={vehicle} onVehicleSelected={handleVehicleSelected}>
-              {!vehicle && (
-                <div className="no-selection">
-                  <h2>Select a vehicle to view details</h2>
-                  <p>Choose a vehicle from the menu to see its details here.</p>
-                </div>
-              )}
-            </VehicleLayout>
+      >
+        {selectedVehicle ? (
+          <div className="vehicle-details">
+            <ProductLayout 
+              title={`${selectedVehicle.manufacturer} ${selectedVehicle.model}`}
+              images={getVehicleImages()}
+            >
+              <div className="vehicle-specs">
+                {selectedVehicle.description && <p className="vehicle-description">{selectedVehicle.description}</p>}
+              </div>
+            </ProductLayout>
+          </div>
+        ) : (
+          <div className="no-vehicle-selected">
+            <p>Select a vehicle to view details</p>
           </div>
         )}
-      />
+      </EntitySelectionLayout>
     </div>
   );
 };
+
+// Add styles to the document
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = styles;
+document.head.appendChild(styleSheet);
 
 export default VehiclesPage;

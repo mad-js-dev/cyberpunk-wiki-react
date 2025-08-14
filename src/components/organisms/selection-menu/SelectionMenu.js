@@ -59,6 +59,14 @@ class SelectionMenu extends HTMLElement {
           --text-color: #2d3748;
           --text-secondary: #4a5568;
         }
+
+        :host .collapsible-item__header {
+          background-image: url('./assets/Frame4.svg');
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          height: 80px;
+        }
         
         .menu-container {
           border: 1px solid var(--border-color);

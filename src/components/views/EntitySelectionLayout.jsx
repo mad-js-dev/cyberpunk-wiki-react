@@ -52,7 +52,7 @@ const EntitySelectionLayout = ({
     layout: {
       display: 'grid',
       gridTemplateColumns: '300px 1fr',
-      gap: '0',
+      gap: '3rem',
       padding: '2rem',
       height: '80vh',
       /*

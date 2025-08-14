@@ -26,10 +26,6 @@ const VehicleLayout = ({ vehicle, onVehicleSelected, children }) => {
       <div className="vehicle-details">
         <div className="vehicle-header">
           <h2>{vehicle.manufacturer} {vehicle.model} {vehicle.series}</h2>
-          <div className="vehicle-meta">
-            <span className="vehicle-type">{vehicle.type}</span>
-            <span className="vehicle-class">{vehicle.class}</span>
-          </div>
         </div>
         
         <div className="vehicle-specs">

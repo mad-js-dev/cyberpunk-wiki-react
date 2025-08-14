@@ -1,3 +1,8 @@
+// Import images from assets
+import architectureImage from '../assets/vehicles/architecture.jpg';
+import natureImage from '../assets/vehicles/nature.jpg';
+import technologyImage from '../assets/vehicles/technology.jpg';
+
 const vehicles = [
   // Archer Vehicles
   {
@@ -16,17 +21,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -49,17 +54,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -81,17 +86,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -113,17 +118,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -147,17 +152,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -186,17 +191,17 @@ const vehicles = [
     images: [
       {
         "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
+        "src": architectureImage,
         "alt": "Front view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
+        "src": natureImage,
         "alt": "Side view of Archer Hella EC-D i360"
       },
       {
         "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
+        "src": technologyImage,
         "alt": "Interior of Archer Hella EC-D i360"
       }
     ],
@@ -220,19 +225,19 @@ const vehicles = [
     description: 'The MaiMai P126 is a compact city car with improved horsepower and maximum speed for longer travels. Features a minimalist design and efficient performance, making it perfect for navigating the tight streets of Night City. The P126 variant lacks a frontal iron bumper and has a different tailgate compared to the base model.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "MaiMai P126 Front",
+        "src": architectureImage,
+        "alt": "Front view of Makigai MaiMai P126"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "MaiMai P126 Side",
+        "src": natureImage,
+        "alt": "Side view of Makigai MaiMai P126"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "MaiMai P126 Interior",
+        "src": technologyImage,
+        "alt": "Interior of Makigai MaiMai P126"
       }
     ],
     year: '2077',

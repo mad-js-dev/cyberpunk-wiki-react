@@ -1,0 +1,89 @@
+.collapsible-item {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #2a2a2a;
+  margin-bottom: 8px;
+  overflow: hidden;
+  background-color: #1a1a1a;
+  transition: all 0.3s ease;
+}
+
+.collapsible-item--expanded {
+  background-color: #252525;
+}
+
+.collapsible-item--no-padding {
+  padding: 0;
+}
+
+.collapsible-item__header {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.2s ease;
+}
+
+.collapsible-item__header:hover {
+  background-color: #2a2a2a;
+}
+
+.collapsible-item__icon {
+  margin-right: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.collapsible-item--expanded .collapsible-item__icon {
+  transform: rotate(90deg);
+}
+
+.collapsible-item__arrow {
+  display: inline-block;
+  font-size: 1.2em;
+  line-height: 1;
+  color: #4a90e2;
+}
+
+.collapsible-item__title {
+  flex: 1;
+  color: #e0e0e0;
+  font-weight: 500;
+}
+
+.collapsible-item__content {
+  overflow: hidden;
+  background-color: #1e1e1e;
+}
+
+.collapsible-item__content-inner {
+  padding: 16px;
+  border-top: 1px solid #2a2a2a;
+}
+
+/* Animation for content */
+.collapsible-item__content-enter {
+  max-height: 0;
+  opacity: 0;
+}
+
+.collapsible-item__content-enter-active {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
+
+.collapsible-item__content-exit {
+  max-height: 1000px;
+  opacity: 1;
+}
+
+.collapsible-item__content-exit-active {
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 300ms ease-in-out, opacity 300ms ease-in-out;
+}
