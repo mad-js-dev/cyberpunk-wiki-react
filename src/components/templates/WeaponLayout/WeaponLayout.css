@@ -1,0 +1,183 @@
+.weapon-layout {
+  font-family: var(--font-main);
+  padding: 20px;
+}
+
+.weapon-details {
+  color: rgb(255 121 121 / 71%);
+  font-family: var(--font-main);
+  font-weight: 400;
+  position: relative;
+}
+
+.weapon-header-wrapper {
+  box-sizing: border-box;
+  position: absolute;
+  width: 100%;
+  top: 0;
+  left: 0;
+  padding: 1.5rem 2rem 0 2rem;
+}
+
+.weapon-header {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-content: space-between; 
+  text-transform: uppercase;
+  font-size: 1.4rem;
+}
+
+.weapon-header > div {
+  flex: 1;   
+}
+
+.weapon-header > div:last-child {
+  text-align: right;
+  font-size: 1.0rem;
+  font-weight: 600;
+}
+
+.weapon-type {
+  border-bottom: 1px solid rgb(255 121 121 / 71%);
+}
+
+.weapon-type p {
+  margin-bottom: 5px;
+}
+
+.weapon-header h2 {
+  margin: 0;
+  font-weight: 400;
+}
+
+.weapon-stats {
+  position:absolute;
+  bottom: 0;
+  width: calc(100% - 6rem);
+  padding: 1.5rem ;
+}
+.weapon-image-container {
+  width: 100%;
+  margin: 0 auto;
+  background-color: rgba(0, 0, 0, 0.3);
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  order: 2;
+  
+}
+
+.weapon-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+  background: linear-gradient(45deg, #1a1a2e 25%, #16213e 50%, #1a1a2e 75%);
+  background-size: 200% 200%;
+  animation: gradientBG 10s ease infinite;
+}
+
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+
+
+
+.weapon-details .description {
+  font-style: italic;
+  margin: 15px 0;
+}
+
+/* Stats Grid */
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.stat-item {
+}
+
+.stat-label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  font-weight: 800;
+}
+
+.stat-value {
+  position: relative;
+  height: 24px;
+  background-color: rgba(134, 0, 0, 0.6);
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-weight: 500;
+  color: #fff;
+}
+
+.stat-bar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, rgba(255,0 ,0 , 0.4), rgba(255,0 ,0, 0.6));
+  z-index: 1;
+  transition: width 0.3s ease;
+}
+
+.stat-value > span {
+  position: relative;
+  z-index: 2;
+}
+
+/* Effects List */
+.weapon-effects {
+}
+
+.weapon-effects ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 10px 0 0 0;
+}
+
+.weapon-effects li {
+  position: relative;
+  padding-left: 20px;
+  margin-bottom: 8px;
+  color: #e2e8f0;
+}
+
+.weapon-effects li:before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: #4cc9f0;
+  font-weight: bold;
+}
+
+/* Responsive adjustments */
+@media (min-width: 768px) {
+  .weapon-header {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+  }
+}
+
+@media (max-width: 767px) {
+  .stats-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .weapon-layout {
+    padding: 10px;
+  }
+}
