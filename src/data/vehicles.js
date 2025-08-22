@@ -1,7 +1,12 @@
-// Import images from assets
-import architectureImage from '../assets/vehicles/architecture.jpg';
-import natureImage from '../assets/vehicles/nature.jpg';
-import technologyImage from '../assets/vehicles/technology.jpg';
+// Base URL for the application
+const BASE_URL = '/cyberpunk-wiki-react';
+
+// Image paths in the public directory
+const vehicleImages = {
+  architecture: `${BASE_URL}/vehicles/architecture.jpg`,
+  nature: `${BASE_URL}/vehicles/nature.jpg`,
+  technology: `${BASE_URL}/vehicles/technology.jpg`
+};
 
 const vehicles = [
   // Archer Vehicles
@@ -20,19 +25,19 @@ const vehicles = [
     description: 'V\'s initial and only vehicle during Act 1. This version of the Hella has a unique model, more horsepower than the average Hella EC-D i360, unique decorations and wider wheels.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'The Ripperdoc mission',
@@ -53,19 +58,19 @@ const vehicles = [
     description: 'The first sportscar released by Archer, in production since 2041. Bearing the angular lines and low profile of popular civilian vehicles from a hundred years prior, the Quartz is the car of choice for those who can afford a set of wheels with more than two pedals and a chain. Popular with nomads for its endurance and reliability in rough terrain.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2041-2077'
@@ -85,19 +90,19 @@ const vehicles = [
     description: 'A high-performance variant of the Quartz EC-L r275 with a considerable upgrade in terms of horsepower. Features the same iconic angular design but with enhanced performance capabilities.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-T2 r660 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-T2 r660 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-T2 r660 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-T2 r660 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-T2 r660 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-T2 r660 vehicle"
       }
     ],
     year: '2077'
@@ -117,19 +122,19 @@ const vehicles = [
     description: 'A limited-edition Quartz with classic soul, nova style and enough horsepower to leave all other vehicles in the dust. This custom variant features a unique livery and performance upgrades, making it one of the most sought-after vehicles in Night City.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz Bandit Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz Bandit vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz Bandit Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz Bandit vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz Bandit Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz Bandit vehicle"
       }
     ],
     obtainedFrom: 'Free DLC (Patch 1.3)',
@@ -151,19 +156,19 @@ const vehicles = [
     description: 'A custom Nomad variant of the Quartz, equipped with a powerful engine capable of handling rough terrain. Features reinforced suspension, off-road tires, and additional armor plating for wasteland travel. The Sidewinder is a favorite among the Aldecaldos and other nomad clans.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -190,19 +195,19 @@ const vehicles = [
     description: 'A high-performance, limited-production variant of the Quartz with a focus on speed and handling. The Specter features a lightweight chassis, aerodynamic body kit, and a tuned engine for maximum performance. Its sleek, all-black design makes it a favorite among Night City\'s elite.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": architectureImage,
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": natureImage,
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": technologyImage,
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Special event reward',
@@ -226,17 +231,17 @@ const vehicles = [
     images: [
       {
         "title": "MaiMai P126 Front",
-        "src": architectureImage,
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
         "alt": "Front view of Makigai MaiMai P126"
       },
       {
         "title": "MaiMai P126 Side",
-        "src": natureImage,
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
         "alt": "Side view of Makigai MaiMai P126"
       },
       {
         "title": "MaiMai P126 Interior",
-        "src": technologyImage,
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
         "alt": "Interior of Makigai MaiMai P126"
       }
     ],
@@ -263,19 +268,19 @@ const vehicles = [
     description: 'A small, practical city car provided by Mr. Hands during the "Lucretia My Reflection" mission. Features a compact design perfect for navigating the crowded streets of Night City. The Tanishi comes with a Japanese voice assistant that greets the driver in Japanese when entering or exiting the vehicle.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Mr. Hands during "Lucretia My Reflection" mission',
@@ -296,19 +301,19 @@ const vehicles = [
     description: 'A customized off-road variant of the Tanishi, the "Kuma" features enhanced suspension, all-terrain tires, and a rugged exterior design. Despite its small size, it handles surprisingly well on rough terrain. The name "Kuma" (meaning "bear" in Japanese) is a nod to the 2020s Arasaka Kuma Land Rover. Features the same Japanese voice assistant as other Makigai vehicles.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -336,19 +341,19 @@ const vehicles = [
     description: 'The Hozuki MH2 is a high-performance sportbike that combines sleek design with raw power. Known for its exceptional handling and acceleration, it\'s a favorite among Night City\'s street racers and couriers. The MH2 features an advanced traction control system and aerodynamic bodywork for maximum performance.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -375,19 +380,19 @@ const vehicles = [
     description: 'The "Hoseki" is a premium variant of the Hozuki series, featuring enhanced performance components and exclusive styling. The name "Hoseki" (meaning "jewel" in Japanese) reflects its status as a premium offering with superior handling and power delivery compared to the standard MH2.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -414,19 +419,19 @@ const vehicles = [
     description: 'The Shion MZ1 is a high-performance sports car that combines Japanese engineering with cutting-edge technology. As the base model of the Shion series, it offers an excellent balance of speed, handling, and comfort. The MZ1 features a sleek, aerodynamic design and a powerful engine that delivers exhilarating performance on both city streets and open roads.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -453,19 +458,19 @@ const vehicles = [
     description: 'The "Samum" is an ultra-high-performance variant of the Shion, designed for maximum speed and handling. Named after the desert wind, the Samum is as fast and unpredictable as its namesake. This exclusive model features extensive use of carbon fiber, advanced aerodynamics, and a highly tuned engine that pushes the boundaries of automotive performance.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Special event reward',
@@ -496,19 +501,19 @@ const vehicles = [
     description: 'The Quadra Turbo-R was introduced as America\'s response to Japanese sports car manufacturers. Designed and built in Detroit, it became a star in the tuner scene when released in the mid-2050s, despite its universally criticized suspension. The 740 model features a powerful turbo-charged V8 engine and a design reminiscent of 1980s exotic sports cars, with its wedge shape and bulging wheel arches.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -536,19 +541,19 @@ const vehicles = [
     description: 'The Turbo-R V-Tech is the queen of the road, a car that turns heads even when you\'re not burning rubber. Introduced in 2058 as an improved version of the original Turbo-R, it features an enhanced exhaust system and suspension, quickly earning it the status of a cult muscle car. The V-Tech represents the pinnacle of Quadra\'s engineering, combining raw power with refined handling.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Reward for completing the \'Sex On Wheels\' quest after finishing Gig: Life\'s Work',
@@ -577,19 +582,19 @@ const vehicles = [
     description: 'The Type-66 640 TS is a modern interpretation of classic American muscle cars, blending retro styling with futuristic technology. Known for its raw power and aggressive styling, it\'s a favorite among those who appreciate classic American automotive design with a cyberpunk twist. The 640 TS model offers a perfect balance of performance and drivability for everyday use.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -616,19 +621,19 @@ const vehicles = [
     description: 'The Type-66 Avenger is a high-performance variant of the classic Type-66, designed for those who demand the ultimate in power and handling. With its aggressive styling, enhanced aerodynamics, and tuned engine, the Avenger is a force to be reckoned with on both the streets and the track. This model pays homage to classic American muscle cars while incorporating cutting-edge technology.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Special event reward',
@@ -658,19 +663,19 @@ const vehicles = [
     description: 'The Type-66 "Bulitt" is a high-performance variant of the classic Type-66, designed for those who appreciate raw power and classic styling. This limited-edition model features a unique blue livery with white racing stripes, paying homage to classic American muscle cars. The Bulitt is known for its aggressive exhaust note and exceptional straight-line performance.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -698,19 +703,19 @@ const vehicles = [
     description: 'The Type-66 "Cthulhu" is a custom racing variant of the Type-66, originally built for the late street racer Peter Sampson. This one-of-a-kind machine features extensive aerodynamic modifications, a stripped-down interior, and a highly-tuned engine that pushes the boundaries of what\'s possible with Quadra\'s legendary V8. The Cthulhu is not just a car—it\'s a legend on the streets of Night City.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all Claire\'s races in "The Beast in Me" questline',
@@ -740,19 +745,19 @@ const vehicles = [
     description: 'The Type-66 "Jen Rowley" is a special edition model named after the legendary rockerboy. Featuring a striking black and red color scheme with flame decals, this car is as much a work of art as it is a high-performance machine. The Jen Rowley edition comes with a custom sound system that can be heard from blocks away, making it a favorite among Night City\'s music and car enthusiasts alike.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of Rogue\'s gigs in the Afterlife',
@@ -782,19 +787,19 @@ const vehicles = [
     description: 'The Type-66 "Hoon" is a high-performance, all-terrain variant of the classic Type-66, designed as a tribute to legendary rally driver Ken Block. This beast features all-wheel drive, reinforced suspension, and aggressive off-road tires that allow it to dominate any terrain. The Hoon comes in a striking blue and white livery with the number 43, paying homage to Block\'s iconic rally cars. With its turbocharged engine and rally-inspired modifications, this is one of the most capable and exciting vehicles in Night City.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of the "Beast in Me" races with Claire',
@@ -824,19 +829,19 @@ const vehicles = [
     description: 'The Chevillon Emperor 620 Raptor is a rugged off-road vehicle designed to handle the harsh conditions of the Badlands. With its raised suspension, all-terrain tires, and reinforced chassis, the Raptor can tackle any obstacle in its path. The powerful V8 engine provides plenty of torque for off-road adventures, while the spacious interior offers comfort for long journeys through the wasteland.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2076',
@@ -865,19 +870,19 @@ const vehicles = [
     description: 'The Chevillon Emperor Swordfish is a high-performance muscle car that combines classic American styling with modern technology. Featuring a supercharged V8 engine, the Swordfish delivers blistering acceleration and a thunderous exhaust note. The aggressive front grille and aerodynamic body kit give it a menacing presence on the streets of Night City, while the luxurious interior ensures a comfortable ride.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -906,19 +911,19 @@ const vehicles = [
     description: 'The Chevillon Emperor Swordfish Avenger is a limited-edition performance variant of the standard Swordfish. With its enhanced aerodynamics, upgraded suspension, and more powerful engine, the Avenger is the ultimate expression of Chevillon\'s muscle car heritage. The exclusive black and red color scheme and unique badging make it instantly recognizable as something special.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of the "Beat on the Brat" fights',
@@ -950,19 +955,19 @@ const vehicles = [
     description: 'The Herrera Outlaw GTS is a masterpiece of automotive engineering, blending breathtaking performance with stunning Spanish design. Hand-built in Barcelona, this supercar features a mid-mounted V10 engine that delivers explosive acceleration and a spine-tingling exhaust note. The Outlaw GTS is equally at home on the track as it is cruising the streets of Night City, with a luxurious interior that pampers its driver in fine leather and carbon fiber.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -992,19 +997,19 @@ const vehicles = [
     description: 'The Herrera Outlaw Weiler is the ultimate expression of Spanish automotive excellence. This limited-production hypercar is the result of a collaboration between Herrera and legendary racing driver Klaus Weiler. Every component has been optimized for maximum performance, from the twin-turbo V12 engine to the active aerodynamics that generate incredible downforce. The Weiler is not just a car—it\'s a statement of intent, a machine that redefines what\'s possible on four wheels.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of the street racing events in Night City',
@@ -1037,19 +1042,19 @@ const vehicles = [
     description: 'The Mahir Kuej 620 R is a high-performance sportbike that combines cutting-edge technology with aggressive styling. Designed for the track but street-legal, the 620 R features a powerful inline-four engine that delivers explosive acceleration and a spine-tingling exhaust note. The lightweight chassis and premium suspension components provide razor-sharp handling, making it one of the most capable sportbikes in Night City.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1079,19 +1084,19 @@ const vehicles = [
     description: 'The Mahir Kuej 620 R Phantom is a limited-edition track-focused variant of the already impressive 620 R. Built in collaboration with the Arasaka racing team, the Phantom features extensive use of carbon fiber and titanium to reduce weight, along with a more powerful engine and upgraded electronics. The stealthy matte black paint scheme and exclusive badging make it one of the most sought-after motorcycles in Night City.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of the "The Highwayman" time trials',
@@ -1125,19 +1130,19 @@ const vehicles = [
     description: 'The Porsche 911 Turbo (930) is a legendary sports car that has been preserved in pristine condition since the late 20th century. This particular model features the iconic "whale tail" rear spoiler and the powerful 3.3L turbocharged flat-six engine that made it a performance icon. The 930 is a true piece of automotive history, representing the golden age of analog sports cars before the digital age took over.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete the "Chippin\' In" side job',
@@ -1169,19 +1174,19 @@ const vehicles = [
     description: 'The Porsche 911 Turbo S (992) is the ultimate evolution of the 911 lineup, combining cutting-edge technology with the timeless 911 design. This modern supercar features a twin-turbocharged flat-six engine producing over 640 horsepower, all-wheel drive, and advanced aerodynamics. The 992 represents the pinnacle of Porsche\'s engineering excellence, delivering blistering performance while maintaining the everyday usability that the 911 is known for.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete the "Ghost Town" mission with Panam',
@@ -1215,19 +1220,19 @@ const vehicles = [
     description: 'The Delamain Nova is the standard autonomous taxi cab that can be found throughout Night City. These self-driving vehicles are part of Delamain\'s fleet, offering safe and reliable transportation to the citizens of Night City. While not designed for high performance, the Nova provides a smooth, comfortable ride with all the modern amenities expected from a premium taxi service. The vehicle features a spacious interior, advanced climate control, and an AI assistant to assist with navigation and passenger needs.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Available as a taxi service throughout Night City',
@@ -1258,19 +1263,19 @@ const vehicles = [
     description: 'The Delamain Excelsior is the pinnacle of autonomous luxury transportation in Night City. This extended-wheelbase limousine is reserved for VIP clients and corporate executives who demand the utmost in comfort and privacy. The Excelsior features a soundproofed cabin with premium leather seating, a minibar, and a state-of-the-art entertainment system. The vehicle\'s advanced AI ensures a smooth, stress-free journey through the chaotic streets of Night City, with security features that provide peace of mind for high-profile passengers.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'VIP service only, not available to the general public',
@@ -1303,19 +1308,19 @@ const vehicles = [
     description: 'The Rayfield Aerondight Guinevere is the epitome of luxury and performance, handcrafted for the elite of Night City. This limited-edition hypercar features a hybrid powertrain that combines a thunderous V12 engine with electric motors for instantaneous torque and blistering acceleration. The Guinevere\'s exterior is a work of art, with flowing lines and scissor doors that command attention. Inside, the cabin is trimmed in the finest leather and carbon fiber, with every surface exuding opulence and precision engineering.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all "The Beast in Me" races with the highest rating',
@@ -1348,19 +1353,19 @@ const vehicles = [
     description: 'The Rayfield Caliburn is the fastest production car in Night City, a technological marvel that pushes the boundaries of automotive engineering. With its sleek, aerodynamic design and hybrid powertrain producing over 1,000 horsepower, the Caliburn can accelerate from 0 to 100 km/h in under 2 seconds. The interior is a minimalist masterpiece, featuring a holographic display and premium materials throughout. The Caliburn is more than just a car—it\'s a statement of power and prestige.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Find in a hidden tunnel in the Badlands',
@@ -1393,19 +1398,19 @@ const vehicles = [
     description: 'The Thorton Colby CX410 Butte is a rugged off-road pickup truck designed to handle the toughest conditions the Badlands can throw at it. With its high ground clearance, heavy-duty suspension, and powerful V8 engine, the Butte is the vehicle of choice for nomads and mercenaries who need to traverse the wasteland in style. The spacious cabin offers comfort for long journeys, while the reinforced bed can carry all the gear you need for extended trips into the desert.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2076',
@@ -1435,19 +1440,19 @@ const vehicles = [
     description: 'The Thorton Galena Rattler is a no-nonsense economy car designed for the working class of Night City. While it may not win any beauty contests, the Rattler is known for its reliability and low operating costs. The simple four-cylinder engine sips fuel, making it an economical choice for daily commuting. The interior is basic but functional, with durable materials designed to withstand years of use. The Rattler may not be flashy, but it gets the job done without breaking the bank.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1477,19 +1482,19 @@ const vehicles = [
     description: 'The Thorton Meringue is the luxury flagship of the Thorton lineup, offering premium features and comfort at a more accessible price point than European competitors. The Meringue features a powerful V8 engine, plush leather interior, and advanced technology throughout. While it may not have the prestige of a Rayfield or Villefort, the Meringue delivers excellent value for those who want luxury without the flashy price tag. The smooth ride and quiet cabin make it perfect for executives who want to arrive at their destination in comfort and style.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1521,19 +1526,19 @@ const vehicles = [
     description: 'The Villefort Cortes V5000 Valor is the epitome of European luxury and performance. Handcrafted in France, the Valor combines timeless elegance with cutting-edge technology. The hand-stitched leather interior, real wood trim, and premium materials create an atmosphere of refined opulence. Under the hood, a powerful V8 engine provides effortless acceleration, while the adaptive air suspension ensures a smooth, comfortable ride. The Valor is the perfect choice for executives and dignitaries who demand the very best.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1565,19 +1570,19 @@ const vehicles = [
     description: 'The Villefort Alvarado V4F570-F is a full-size luxury SUV that combines opulence with capability. With seating for up to seven passengers, the Alvarado offers spacious comfort for the whole family without compromising on performance. The handcrafted interior features premium leather, real metal accents, and state-of-the-art technology throughout. The powerful V8 engine provides ample power for highway cruising, while the advanced all-wheel-drive system ensures confident handling in all conditions.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1609,19 +1614,19 @@ const vehicles = [
     description: 'The Yaiba Kusanagi CT-3X is a high-performance sportbike that combines cutting-edge technology with sleek, aerodynamic design. Inspired by classic Japanese sportbikes but built with futuristic materials and engineering, the Kusanagi is a favorite among street racers and motorcycle enthusiasts in Night City. The powerful electric motor delivers instant torque, propelling the bike from 0 to 100 km/h in under 2 seconds. The lightweight carbon fiber frame and advanced suspension system provide exceptional handling, making it one of the most agile vehicles in the city.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     year: '2077',
@@ -1653,19 +1658,19 @@ const vehicles = [
     description: 'The Yaiba Kusanagi Takemura Edition is a rare and exclusive variant of the already impressive CT-3X, created in collaboration with the legendary Arasaka agent Goro Takemura. This special edition features a unique black and gold color scheme, enhanced performance components, and exclusive badging. The Takemura Edition is not just a motorcycle—it\'s a work of art, with hand-painted details and premium finishes throughout. The enhanced electric motor delivers even more power, while the upgraded suspension and brakes provide unmatched handling and stopping power.',
     images: [
       {
-        "title": "Hella EC-D i360 Front",
-        "src": "/vehicles/architecture.jpg",
-        "alt": "Front view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Front View",
+        "src": `${BASE_URL}/vehicles/architecture.jpg`,
+        "alt": "Front view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Side",
-        "src": "/vehicles/nature.jpg",
-        "alt": "Side view of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Side View",
+        "src": `${BASE_URL}/vehicles/nature.jpg`,
+        "alt": "Side view of Archer Quartz EC-L r275 vehicle"
       },
       {
-        "title": "Hella EC-D i360 Interior",
-        "src": "/vehicles/technology.jpg",
-        "alt": "Interior of Archer Hella EC-D i360"
+        "title": "Archer Quartz EC-L r275 Interior",
+        "src": `${BASE_URL}/vehicles/technology.jpg`,
+        "alt": "Interior view of Archer Quartz EC-L r275 vehicle"
       }
     ],
     obtainedFrom: 'Complete all of Goro Takemura\'s missions',

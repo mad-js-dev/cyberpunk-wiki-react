@@ -10,6 +10,7 @@ import {
   setSelectedCategory as setSelectedCategoryAction
 } from '../store/cyberhacksSlice';
 import cyberhacksData from '../data/cyberhacks';
+import IconLabel from '../components/atoms/iconLabel/IconLabel';
 
 const CyberhacksPage = () => {
   const dispatch = useDispatch();
@@ -122,7 +123,7 @@ const CyberhacksPage = () => {
                       className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
                       onClick={() => handleHackSelect(hack)}
                     >
-                      <icon-label icon={hack.icon} label={hack.name} />
+                      <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
                     </div>
                   ))}
                 </div>
@@ -137,7 +138,7 @@ const CyberhacksPage = () => {
               className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
               onClick={() => handleHackSelect(hack)}
             >
-              <icon-label icon={hack.icon} label={hack.name} />
+              <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
             </div>
           ))}
         </div>
@@ -170,16 +171,16 @@ const CyberhacksPage = () => {
           flex-direction: row;
         }
 
-        .cyberhacks-page__hack-item .icon-label {
+        .cyberhacks-page__hack-item .cyberhacks-page__hack-icon {
           flex-direction: column;
         }
 
-        .cyberhacks-page__hack-item .icon-label span {
+        .cyberhacks-page__hack-item .cyberhacks-page__hack-icon .label {
           height: 2.2rem;
           font-size: 12px;
         }
 
-        .cyberhacks-page__hack-item .icon-label img {
+        .cyberhacks-page__hack-item .cyberhacks-page__hack-icon .icon {
           max-height: 120px;
           width: auto;
         }

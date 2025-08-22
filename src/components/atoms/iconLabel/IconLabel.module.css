@@ -1,0 +1,24 @@
+.iconLabel {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  word-wrap: break-word;
+}
+
+.reverse {
+  flex-direction: row-reverse;
+}
+
+.icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.label {
+  text-align: center;
+  word-wrap: break-word;
+  line-height: 1.2;
+}
