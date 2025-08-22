@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import './VehicleLayout.css';
 
 /**
  * Layout component for displaying vehicle details
@@ -29,20 +30,56 @@ const VehicleLayout = ({ vehicle, onVehicleSelected, children }) => {
         </div>
         
         <div className="vehicle-specs">
+          {vehicle.description && (
+            <div className="description">
+              <p>{vehicle.description}</p>
+            </div>
+          )}
+          
           <div className="specs-grid">
-            <div className="spec-item">
-              <span className="spec-label">Top Speed</span>
-              <span className="spec-value">{vehicle.topSpeed} mph</span>
-            </div>
-            <div className="spec-item">
-              <span className="spec-label">Seats</span>
-              <span className="spec-value">{vehicle.seats}</span>
-            </div>
+            {vehicle.topSpeed && (
+              <div className="spec-item">
+                <span className="spec-label">Top Speed</span>
+                <span className="spec-value">{vehicle.topSpeed} mph</span>
+              </div>
+            )}
+            
+            {vehicle.seats && (
+              <div className="spec-item">
+                <span className="spec-label">Seats</span>
+                <span className="spec-value">{vehicle.seats}</span>
+              </div>
+            )}
+            
             <div className="spec-item">
               <span className="spec-label">Price</span>
-              <span className="spec-value">${vehicle.price ? vehicle.price.toLocaleString() : 'N/A'}</span>
+              <span className="spec-value">
+                {vehicle.price 
+                  ? `$${vehicle.price.toLocaleString()}` 
+                  : vehicle.price === 0 ? 'Free' : 'Not for Sale'}
+              </span>
             </div>
-            {/* Add more specs as needed */}
+            
+            {vehicle.handling && (
+              <div className="spec-item">
+                <span className="spec-label">Handling</span>
+                <span className="spec-value">{vehicle.handling}/10</span>
+              </div>
+            )}
+            
+            {vehicle.acceleration && (
+              <div className="spec-item">
+                <span className="spec-label">Acceleration</span>
+                <span className="spec-value">{vehicle.acceleration}/10</span>
+              </div>
+            )}
+            
+            {vehicle.year && (
+              <div className="spec-item">
+                <span className="spec-label">Year</span>
+                <span className="spec-value">{vehicle.year}</span>
+              </div>
+            )}
           </div>
         </div>
         

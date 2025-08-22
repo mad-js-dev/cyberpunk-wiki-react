@@ -1,6 +1,8 @@
 .weapon-layout {
   font-family: var(--font-main);
   padding: 20px;
+  display: flex;
+  gap: 2rem;
 }
 
 .weapon-details {
@@ -8,6 +10,7 @@
   font-family: var(--font-main);
   font-weight: 400;
   position: relative;
+  flex: 75%;
 }
 
 .weapon-header-wrapper {
@@ -140,6 +143,7 @@
 
 /* Effects List */
 .weapon-effects {
+  flex: 25%;
 }
 
 .weapon-effects ul {

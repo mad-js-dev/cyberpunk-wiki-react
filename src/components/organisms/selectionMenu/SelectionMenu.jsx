@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import PropTypes from 'prop-types';
-import IconLabel from '../../atoms/icon-label/IconLabel';
-import ArrowMenu from '../../atoms/arrow-menu/ArrowMenu';
-import MenuItemBg from '../../atoms/menu-item-bg/MenuItemBg';
+import IconLabel from '../../atoms/iconLabel/IconLabel';
+import ArrowMenu from '../../atoms/arrowMenu/ArrowMenu';
+import MenuItemBg from '../../atoms/menuItemBg/MenuItemBg';
 import './SelectionMenu.css';
 
 const SelectionMenu = ({ items = [], selectedId, onSelect }) => {

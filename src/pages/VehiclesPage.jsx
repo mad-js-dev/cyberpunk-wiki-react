@@ -6,7 +6,7 @@ import {
   getSelectedVehicle 
 } from '../store/vehiclesSlice';
 import EntitySelectionLayout from '../components/views/EntitySelectionLayout';
-import ProductLayout from '../components/templates/product-layout/ProductLayout.jsx';
+import ProductLayout from '../components/templates/productLayout/ProductLayout';
 
 // Add styles
 const styles = `  
@@ -69,9 +69,29 @@ const VehiclesPage = () => {
         }
       });
     }
-    
+    console.log(images[0].src)
     return images.length > 0 ? images : [];
   };
+
+  // Prepare ProductLayout props
+
+const getProductLayoutProps = () => {
+  console.log(getVehicleImages())
+  return {
+    title: `${selectedVehicle.manufacturer} ${selectedVehicle.model} ${selectedVehicle.series }`,
+    description: selectedVehicle.description,
+    specs: {
+      price: selectedVehicle.price,
+      topSpeed: selectedVehicle.topSpeed,
+      acceleration: selectedVehicle.acceleration,
+      seats: selectedVehicle.seats,
+      handling: selectedVehicle.handling,
+      year: selectedVehicle.year,
+    },
+    images: getVehicleImages(),
+    className: "vehicles-page__product-layout"
+  };
+}
 
   return (
     <div className="vehicles-page">
@@ -85,13 +105,8 @@ const VehiclesPage = () => {
         {selectedVehicle ? (
           <div className="vehicle-details">
             <ProductLayout 
-              title={`${selectedVehicle.manufacturer} ${selectedVehicle.model}`}
-              images={getVehicleImages()}
-            >
-              <div className="vehicle-specs">
-                {selectedVehicle.description && <p className="vehicle-description">{selectedVehicle.description}</p>}
-              </div>
-            </ProductLayout>
+              {...getProductLayoutProps()}
+            />
           </div>
         ) : (
           <div className="no-vehicle-selected">

@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import PropTypes from 'prop-types';
-import SelectionMenu from '../organisms/selection-menu/SelectionMenuReact';
+import SelectionMenu from '../organisms/selectionMenu/SelectionMenu';
 
 /**
  * A reusable layout component for entity selection views (Vehicles, Weapons, etc.)
