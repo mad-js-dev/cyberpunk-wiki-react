@@ -173,7 +173,7 @@ const cyberhacks = {
   ],
   ultimate: [
     {
-      name: 'Cyberpsychosis',
+      name: 'Cyber-psychosis',
       icon: '/src/assets/hacks/MadnessProgram.webp',
       ramCost: '22',
       uploadTime: '20.0 → 60.0',

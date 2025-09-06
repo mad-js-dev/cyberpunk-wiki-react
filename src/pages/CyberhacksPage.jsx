@@ -109,7 +109,6 @@ const CyberhacksPage = () => {
   
   return (
     <div className="cyberhacks-page">
-      <h1 className="cyberhacks-page__title">Cyberhacks</h1>
       <div className="cyberhacks-page__hackSelector">
         <ul className="cyberhacks-page__categories">
           {categories.map(category => (
@@ -150,8 +149,7 @@ const CyberhacksPage = () => {
 
       <style>{`
         .cyberhacks-page {
-          max-width: 1200px;
-          margin: 0 auto;
+          margin: 0 1rem;
           color: #fff;
           font-family: 'Courier New', monospace;
         }
@@ -161,6 +159,11 @@ const CyberhacksPage = () => {
           background: rgba(0, 0, 0, 0.7);
         }
 
+        .cyberhacks-page__categoryCollapsible {
+          list-style: none;
+          padding-left: 0;
+        }
+        
         .cyberhacks-page__categoryCollapsible .collapsible-item__header span{
           word-break: break-all;
           writing-mode: sideways-lr;
@@ -169,6 +172,12 @@ const CyberhacksPage = () => {
         .cyberhacks-page__categoryCollapsible.collapsible-item  {
           display: flex;
           flex-direction: row;
+        
+        }
+         
+        
+        .cyberhacks-page__hack-item {
+           max-width: 100px;
         }
 
         .cyberhacks-page__hack-item .cyberhacks-page__hack-icon {
@@ -361,7 +370,7 @@ const CyberhacksPage = () => {
           flex-wrap: wrap;
           gap: 10px;
           justify-content: center;
-          min-width: 600px;
+          min-width: 300px;
         }
         
         .cyberhacks-page__hack-item {
