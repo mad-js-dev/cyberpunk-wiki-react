@@ -1,7 +1,5 @@
-import { useState } from 'react';
 import { Routes, Route, NavLink } from 'react-router-dom';
-import reactLogo from './assets/react.svg';
-import viteLogo from '/vite.svg';
+import HomePage from './pages/HomePage';
 import CyberhacksPage from './pages/CyberhacksPage';
 import VehiclesPage from './pages/VehiclesPage';
 import WeaponsPage from './pages/WeaponsPage';
@@ -17,8 +15,6 @@ import './App.css';
 
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
     <div className="app-container">
       <LayoutDecoration className="deco1"/>
@@ -48,30 +44,7 @@ function App() {
       </div>
       <div className="app-content">
         <Routes>
-          <Route path="/" element={
-            <div>
-              <div>
-                <a href="https://vite.dev" target="_blank" rel="noopener noreferrer">
-                  <img src={viteLogo} className="logo" alt="Vite logo" />
-                </a>
-                <a href="https://react.dev" target="_blank" rel="noopener noreferrer">
-                  <img src={reactLogo} className="logo react" alt="React logo" />
-                </a>
-              </div>
-              <h1>Vite + React</h1>
-              <div className="card">
-                <button onClick={() => setCount((count) => count + 1)}>
-                  count is {count}
-                </button>
-                <p>
-                  Edit <code>src/App.tsx</code> and save to test HMR
-                </p>
-              </div>
-              <p className="read-the-docs">
-                Click on the Vite and React logos to learn more
-              </p>
-            </div>
-          } />
+          <Route path="/" element={<HomePage />} />
           <Route path="/cyberhacks" element={<CyberhacksPage />} />
           <Route path="/vehicles" element={<VehiclesPage />} />
           <Route path="/weapons" element={<WeaponsPage />} />
