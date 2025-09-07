@@ -35,9 +35,13 @@ const IconLabel = ({
     >
       {icon && (
         <img 
-          src={icon} 
+          src={typeof icon === 'string' ? icon : (icon.default || icon)} 
           className={styles.icon} 
           alt="" // Decorative image
+          onError={(e) => {
+            console.error('Failed to load icon:', icon);
+            e.target.style.display = 'none';
+          }}
         />
       )}
       {label && (

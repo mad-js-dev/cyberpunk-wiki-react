@@ -109,123 +109,242 @@ const CyberhacksPage = () => {
   
   return (
     <div className="cyberhacks-page">
-      <div className="cyberhacks-page__hackSelector">
+      {/* Left Panel - Categories */}
+      <div className="cyberhacks-page__categories-container">
+        <h3 className="cyberhacks-page__panel-title">Offensive Hacks</h3>
         <ul className="cyberhacks-page__categories">
           {categories.map(category => (
-            <div key={category.id} className="cyberhacks-page__category">
-              <li is="collapsible-item" label={category.label} hide-icon="true" class="cyberhacks-page__categoryCollapsible">
-              
-                <div className="cyberhacks-page__category-hacks">
-                  {cyberhacks[category.id]?.map((hack, index) => (
-                    <div 
-                      key={index} 
-                      className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
-                      onClick={() => handleHackSelect(hack)}
-                    >
-                      <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
-                    </div>
-                  ))}
-                </div>
-              </li>
-            </div>
+            <li key={category.id} className="cyberhacks-page__category">
+              <div 
+                className="cyberhacks-page__category-header"
+                onClick={() => handleCategorySelect(category.id)}
+              >
+                {category.label}
+              </div>
+              <div className="cyberhacks-page__category-hacks">
+                {cyberhacks[category.id]?.map((hack, index) => (
+                  <div 
+                    key={index} 
+                    className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
+                    onClick={() => handleHackSelect(hack)}
+                  >
+                    <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
+                  </div>
+                ))}
+              </div>
+            </li>
           ))}
         </ul>
-        <div className="cyberhacks-page__category-hacks">
-          {hackutils.map((hack, index) => (
-            <div 
-              key={index} 
-              className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
-              onClick={() => handleHackSelect(hack)}
-            >
-              <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
-            </div>
-          ))}
-        </div>
       </div>
+      
+      {/* Middle Panel - Hack Details */}
       <div className="cyberhacks-page__hackDetails">
         {renderHackDetails()}
-      </div>    
+      </div>
+      
+      {/* Right Panel - Utilities */}
+      {hackutils.length > 0 && (
+        <div className="cyberhacks-page__utilities-panel">
+          <h3 className="cyberhacks-page__panel-title">Utility Hacks</h3>
+          <div className="cyberhacks-page__utilities-grid">
+            {hackutils.map((hack, index) => (
+              <div 
+                key={index} 
+                className={`cyberhacks-page__hack-item ${selectedHack?.name === hack.name ? 'cyberhacks-page__hack-item--selected' : ''}`}
+                onClick={() => handleHackSelect(hack)}
+              >
+                <IconLabel icon={hack.icon} label={hack.name} className="cyberhacks-page__hack-icon" />
+              </div>
+            ))}
+          </div>
+        </div>
+      )}    
       
 
       <style>{`
         .cyberhacks-page {
+          display: grid;
+          grid-template-columns: 370px 1fr 300px;
+          height: calc(100vh - 2rem);
           margin: 0 1rem;
           color: #fff;
           font-family: 'Courier New', monospace;
-        }
-
-        .cyberhacks-page__hackSelector {
-          padding: 1rem;
           background: rgba(0, 0, 0, 0.7);
+          border-radius: 8px;
+          overflow: hidden;
         }
 
-        .cyberhacks-page__categoryCollapsible {
-          list-style: none;
-          padding-left: 0;
-        }
-        
-        .cyberhacks-page__categoryCollapsible .collapsible-item__header span{
-          word-break: break-all;
-          writing-mode: sideways-lr;
-        }
-
-        .cyberhacks-page__categoryCollapsible.collapsible-item  {
+        .cyberhacks-page__categories-container {
+          background: rgba(0, 0, 0, 0.5);
+          border-right: 1px solid #333;
+          padding: 1rem;
           display: flex;
-          flex-direction: row;
-        
+          flex-direction: column;
+          min-height: 0;
+          flex: 1;
+          overflow-y: auto;
         }
-         
+
+        .cyberhacks-page__categories {
+          list-style: none;
+          padding: 0;
+          margin: 1rem 0 0 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.75rem;
+          min-height: 0;
+          overflow-y: auto;
+          flex: 1;
+        }
+
+        .cyberhacks-page__category {
+          background: rgba(0, 0, 0, 0.5);
+          border-radius: 6px;
+          border: 1px solid #333;
+          transition: all 0.2s ease;
+          display: flex;
+          overflow: hidden;
+          min-height: 0;
+        }
         
+        .cyberhacks-page__category:hover {
+          border-color: #ff2a6d;
+          background: rgba(255, 42, 109, 0.1);
+        }
+
+        .cyberhacks-page__category-header {
+          writing-mode: vertical-rl;
+          transform: rotate(180deg);
+          padding: 0.5rem 0.5rem 1rem 0.5rem;
+          cursor: pointer;
+          color: #00ff9f;
+          font-weight: bold;
+          background: rgba(0, 0, 0, 0.3);
+          text-align: left;
+          white-space: nowrap;
+          display: flex;
+          align-items: flex-start;
+          justify-content: flex-end;
+          height: 100%;
+        }
+
+        .cyberhacks-page__category-hacks {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          gap: 0.75rem;
+          padding: 0.5rem 0.75rem;
+          width: 100%;
+          min-height: 0;
+          min-width: 0;
+        }
+
         .cyberhacks-page__hack-item {
-           max-width: 100px;
+          padding: 0.5rem;
+          background: rgba(255, 255, 255, 0.05);
+          border-radius: 4px;
+          cursor: pointer;
+          transition: all 0.2s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          min-height: 0;
+          min-width: 0;
+          overflow: hidden;
+          height: 60px;
+        }
+        
+        .cyberhacks-page__hack-icon {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.25rem;
+          width: 100%;
+          height: 100%;
+        }
+        
+        .cyberhacks-page__hack-icon .icon {
+          width: 20px;
+          height: 20px;
+          object-fit: contain;
+        }
+        
+        .cyberhacks-page__hack-icon .label {
+          font-size: 12px;
+          line-height: 1.1;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          max-width: 100%;
+        }
+
+        .cyberhacks-page__hack-item:hover {
+          background: rgba(0, 255, 159, 0.1);
+        }
+
+        .cyberhacks-page__hack-item--selected {
+          background: rgba(0, 255, 159, 0.2) !important;
+          border-left: 3px solid #00ff9f;
         }
 
         .cyberhacks-page__hack-item .cyberhacks-page__hack-icon {
+          display: flex;
           flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          gap: 0.25rem;
+          width: 100%;
+          height: 100%;
         }
 
         .cyberhacks-page__hack-item .cyberhacks-page__hack-icon .label {
-          height: 2.2rem;
-          font-size: 12px;
+          font-size: 14px;
+          height: auto;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
         }
 
         .cyberhacks-page__hack-item .cyberhacks-page__hack-icon .icon {
-          max-height: 120px;
-          width: auto;
-        }
-        
-        .cyberhacks-page__title {
-          color: #00ff9f;
-          text-align: center;
-          margin-bottom: 30px;
-          text-transform: uppercase;
-          letter-spacing: 2px;
-        }
-        
-        .cyberhacks-page__categories {
-          display: flex;
-          gap: 10px;
-          margin: 2rem 0;
-          overflow-x: auto;
-          padding-left: 0;
-        }
-        
-        .cyberhacks-page__category {
-          background: rgba(0, 0, 0, 0.7);
-          border-radius: 8px;
-          padding: 1rem;
-          border: 1px solid #ff2a6d;
-          width: 100%;
+          width: 24px;
+          height: 24px;
+          min-width: 24px;
         }
 
-        /* Hack Details Styles */
+        .cyberhacks-page__utilities-panel {
+          background: rgba(0, 0, 0, 0.5);
+          border-left: 1px solid #333;
+          padding: 1rem;
+          overflow-y: auto;
+        }
+
+        .cyberhacks-page__panel-title {
+          color: #00ff9f;
+          margin: 0 0 1rem 0;
+          font-size: 1.1rem;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+          padding-bottom: 0.5rem;
+          border-bottom: 1px solid #333;
+        }
+
+        .cyberhacks-page__utilities-grid,
+        .cyberhacks-page__category-hacks {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 0.75rem;
+          padding: 0.5rem 0.75rem;
+          min-height: 0;
+          min-width: 0;
+        }
+
         .cyberhacks-page__hackDetails {
           background: rgba(20, 20, 30, 0.9);
-          border-radius: 8px;
-          margin: 1rem;
           padding: 1.5rem;
           color: #e0e0e0;
-          box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+          overflow-y: auto;
         }
 
         .hack-details--empty {

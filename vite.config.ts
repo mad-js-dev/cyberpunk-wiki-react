@@ -9,6 +9,12 @@ export default defineConfig({
     target: 'esnext',
     outDir: 'dist',
     sourcemap: false,
+    assetsDir: 'assets',
+  },
+  server: {
+    fs: {
+      strict: false,
+    },
   },
   define: {
     'process.env': {}

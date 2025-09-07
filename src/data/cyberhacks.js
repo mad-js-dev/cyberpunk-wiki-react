@@ -1,8 +1,35 @@
+// Import all hack icons
+import OverheatIcon from '../assets/hacks/OverheatProgram.webp';
+import EMPOverloadIcon from '../assets/hacks/EMPOverloadProgram.webp';
+import ContagionIcon from '../assets/hacks/ContagionProgram.webp';
+import BrainMeltIcon from '../assets/hacks/BrainMeltProgram.webp';
+import BlindIcon from '../assets/hacks/BlindProgram.webp';
+import DisableCyberwareIcon from '../assets/hacks/DisableCyberwareProgram.webp';
+import LocomotionMalfunctionIcon from '../assets/hacks/LocomotionMalfunctionProgram.webp';
+import WeaponMalfunctionIcon from '../assets/hacks/WeaponMalfunctionProgram.webp';
+import PingIcon from '../assets/hacks/PingProgram.webp';
+import WhistleIcon from '../assets/hacks/WhistleProgram.webp';
+import MemoryWipeIcon from '../assets/hacks/MemoryWipeProgram.webp';
+import CommsNoiseIcon from '../assets/hacks/CommsNoiseProgram.webp';
+import MadnessIcon from '../assets/hacks/MadnessProgram.webp';
+import SuicideIcon from '../assets/hacks/SuicideProgram.webp';
+import SystemCollapseIcon from '../assets/hacks/SystemCollapseProgram.webp';
+import GrenadeExplodeIcon from '../assets/hacks/GrenadeExplodeProgram.webp';
+import GenericProgramIcon from '../assets/hacks/GenericProgram.webp';
+import OverloadIcon from '../assets/hacks/Icon_Quickhack_Overload.webp';
+import SetDeviceSupportIcon from '../assets/hacks/Icon_Quickhack_SetDeviceSupportMode.webp';
+import MalfunctionIcon from '../assets/hacks/Icon_Quickhack_Malfunction.webp';
+import CommsCallInIcon from '../assets/hacks/Icon_Quickhack_CommsCallIn.webp';
+import TakeControlIcon from '../assets/hacks/Icon_Quickhack_TakeControl.webp';
+import VehicleAccelerateIcon from '../assets/hacks/Icon_Quickhack_VehicleAccelerate.webp';
+import VehicleHitBrakesIcon from '../assets/hacks/Icon_Quickhack_VehicleHitBrakes.webp';
+import VehicleExplodeIcon from '../assets/hacks/Icon_Quickhack_VehicleExplode.webp';
+
 const cyberhacks = {
   combat: [
     {
       name: 'Overheat',
-      icon: '/src/assets/hacks/OverheatProgram.webp',
+      icon: OverheatIcon,
       ramCost: '4 → 5 → 7 → 9',
       uploadTime: '2',
       cooldown: '2',
@@ -16,7 +43,7 @@ const cyberhacks = {
     },
     {
       name: 'Short Circuit',
-      icon: '/src/assets/hacks/EMPOverloadProgram.webp',
+      icon: EMPOverloadIcon,
       ramCost: '4 → 5 → 7 → 10',
       uploadTime: '3',
       cooldown: '1.5 → 1.25 → 1.0 → 0.5',
@@ -30,7 +57,7 @@ const cyberhacks = {
     },
     {
       name: 'Contagion',
-      icon: '/src/assets/hacks/ContagionProgram.webp',
+      icon: ContagionIcon,
       ramCost: '5 → 7 → 9 → 12',
       uploadTime: '6 → 7 → 8',
       cooldown: '3 → 2',
@@ -44,7 +71,7 @@ const cyberhacks = {
     },
     {
       name: 'Synapse Burnout',
-      icon: '/src/assets/hacks/BrainMeltProgram.webp',
+      icon: BrainMeltIcon,
       ramCost: '10 → 14 → 16',
       uploadTime: '3.0',
       cooldown: '-',
@@ -60,7 +87,7 @@ const cyberhacks = {
   control: [
     {
       name: 'Reboot Optics',
-      icon: '/src/assets/hacks/BlindProgram.webp',
+      icon: BlindIcon,
       ramCost: '2 → 5 → 7',
       uploadTime: '8.0 → 15.0',
       cooldown: '0.3',
@@ -74,7 +101,7 @@ const cyberhacks = {
     },
     {
       name: 'Cyberware Malfunction',
-      icon: '/src/assets/hacks/DisableCyberwareProgram.webp',
+      icon: DisableCyberwareIcon,
       ramCost: '4',
       uploadTime: '10.0',
       cooldown: '0.3',
@@ -89,7 +116,7 @@ const cyberhacks = {
     },
     {
       name: 'Cripple Movement',
-      icon: '/src/assets/hacks/LocomotionMalfunctionProgram.webp',
+      icon: LocomotionMalfunctionIcon,
       ramCost: '4 → 6',
       uploadTime: '13.8',
       cooldown: '0.3',
@@ -102,7 +129,7 @@ const cyberhacks = {
     },
     {
       name: 'Weapon Glitch',
-      icon: '/src/assets/hacks/WeaponMalfunctionProgram.webp',
+      icon: WeaponMalfunctionIcon,
       ramCost: '4',
       uploadTime: '14.0',
       cooldown: '0.3',
@@ -118,7 +145,7 @@ const cyberhacks = {
   covert: [
     {
       name: 'Ping',
-      icon: '/src/assets/hacks/PingProgram.webp',
+      icon: PingIcon,
       ramCost: '4 → 5 → 7 → 4',
       uploadTime: '9.2 → 13.8 → 18.4 → 34.5',
       cooldown: '1',
@@ -131,7 +158,7 @@ const cyberhacks = {
     },
     {
       name: 'Bait',
-      icon: '/src/assets/hacks/WhistleProgram.webp',
+      icon: WhistleIcon,
       ramCost: '3 → 4 → 3',
       uploadTime: '17.2',
       cooldown: '0.3',
@@ -145,7 +172,7 @@ const cyberhacks = {
     },
     {
       name: 'Memory Wipe',
-      icon: '/src/assets/hacks/MemoryWipeProgram.webp',
+      icon: MemoryWipeIcon,
       ramCost: '8 → 10 → 32',
       uploadTime: '9.2',
       cooldown: '1.5 → 10 → 3',
@@ -158,7 +185,7 @@ const cyberhacks = {
     },
     {
       name: 'Sonic Shock',
-      icon: '/src/assets/hacks/CommsNoiseProgram.webp',
+      icon: CommsNoiseIcon,
       ramCost: '4 → 5 → 6 → 2',
       uploadTime: '34.5',
       cooldown: '1.0 → 2.0',
@@ -174,7 +201,7 @@ const cyberhacks = {
   ultimate: [
     {
       name: 'Cyber-psychosis',
-      icon: '/src/assets/hacks/MadnessProgram.webp',
+      icon: MadnessIcon,
       ramCost: '22',
       uploadTime: '20.0 → 60.0',
       cooldown: '1.5',
@@ -186,7 +213,7 @@ const cyberhacks = {
     },
     {
       name: 'Suicide',
-      icon: '/src/assets/hacks/SuicideProgram.webp',
+      icon: SuicideIcon,
       ramCost: '24',
       uploadTime: '1.0',
       cooldown: '12.5',
@@ -198,7 +225,7 @@ const cyberhacks = {
     },
     {
       name: 'System Collapse',
-      icon: '/src/assets/hacks/SystemCollapseProgram.webp',
+      icon: SystemCollapseIcon,
       ramCost: '28',
       uploadTime: '1.0',
       cooldown: '-',
@@ -211,7 +238,7 @@ const cyberhacks = {
     },
     {
       name: 'Detonate Grenade',
-      icon: '/src/assets/hacks/GrenadeExplodeProgram.webp',
+      icon: GrenadeExplodeIcon,
       ramCost: '24',
       uploadTime: '15.0 → 1.0',
       cooldown: '1.0',
@@ -224,7 +251,7 @@ const cyberhacks = {
     },
     {
       name: 'Blackwall Gateway',
-      icon: '/src/assets/hacks/GenericProgram.webp',
+      icon: GenericProgramIcon,
       ramCost: '14',
       uploadTime: '9',
       cooldown: '-',
@@ -239,7 +266,7 @@ const cyberhacks = {
   device: [
     {
       name: 'Initiate Overload',
-      icon: '/src/assets/hacks/Icon_Quickhack_Overload.webp',
+      icon: OverloadIcon,
       ramCost: '8',
       uploadTime: '3.0',
       cooldown: '15.0',
@@ -254,7 +281,7 @@ const cyberhacks = {
     },
     {
       name: 'Friendly Mode',
-      icon: '/src/assets/hacks/Icon_Quickhack_SetDeviceSupportMode.webp',
+      icon: SetDeviceSupportIcon,
       ramCost: '6',
       uploadTime: '2.0',
       cooldown: '20.0',
@@ -269,7 +296,7 @@ const cyberhacks = {
     },
     {
       name: 'Distract Enemies',
-      icon: '/src/assets/hacks/Icon_Quickhack_Malfunction.webp',
+      icon: MalfunctionIcon,
       ramCost: '2',
       uploadTime: '0.5',
       cooldown: '10.0',
@@ -284,7 +311,7 @@ const cyberhacks = {
     },
     {
       name: 'Request Backup',
-      icon: '/src/assets/hacks/Icon_Quickhack_CommsCallIn.webp',
+      icon: CommsCallInIcon,
       ramCost: '3',
       uploadTime: '1.0',
       cooldown: '1.0',
@@ -299,7 +326,7 @@ const cyberhacks = {
     },
     {
       name: 'Camera Control',
-      icon: '/src/assets/hacks/Icon_Quickhack_TakeControl.webp',
+      icon: TakeControlIcon,
       ramCost: '3',
       uploadTime: '1.0',
       cooldown: '5.0',
@@ -314,7 +341,7 @@ const cyberhacks = {
     },
     {
       name: 'Take Control',
-      icon: '/src/assets/hacks/Icon_Quickhack_TakeControl.webp',
+      icon: TakeControlIcon,
       ramCost: '0',
       uploadTime: '0',
       cooldown: '0',
@@ -327,7 +354,7 @@ const cyberhacks = {
     },
     {
       name: 'Turret Control',
-      icon: '/src/assets/hacks/Icon_Quickhack_TakeControl.webp',
+      icon: TakeControlIcon,
       ramCost: '6',
       uploadTime: '2.0',
       cooldown: '15.0',
@@ -344,7 +371,7 @@ const cyberhacks = {
   vehicle: [
     {
       name: 'Take Control',
-      icon: '/src/assets/hacks/Icon_Quickhack_TakeControl.webp',
+      icon: TakeControlIcon,
       ramCost: '10',
       uploadTime: '5.0',
       cooldown: '60.0',
@@ -359,7 +386,7 @@ const cyberhacks = {
     },
     {
       name: 'Floor It',
-      icon: '/src/assets/hacks/Icon_Quickhack_VehicleAccelerate.webp',
+      icon: VehicleAccelerateIcon,
       ramCost: '6',
       uploadTime: '1.0',
       cooldown: '5.0',
@@ -372,7 +399,7 @@ const cyberhacks = {
     },
     {
       name: 'Emergency Brake',
-      icon: '/src/assets/hacks/Icon_Quickhack_VehicleHitBrakes.webp',
+      icon: VehicleHitBrakesIcon,
       ramCost: '4',
       uploadTime: '0.5',
       cooldown: '3.0',
@@ -385,7 +412,7 @@ const cyberhacks = {
     },
     {
       name: 'Self-destruct',
-      icon: '/src/assets/hacks/Icon_Quickhack_VehicleExplode.webp',
+      icon: VehicleExplodeIcon,
       ramCost: '12',
       uploadTime: '3.0',
       cooldown: '30.0',
